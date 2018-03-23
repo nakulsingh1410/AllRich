@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DoubleTextFieldCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoubleTextFieldCell" rowHeight="91" id="KGk-i7-Jjw" customClass="DoubleTextFieldCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIU-Qk-Igb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconProfileNonactive.png" translatesAutoresizingMaskIntoConstraints="NO" id="VP4-V0-eRr">
+                                <rect key="frame" x="47" y="33" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="88i-S8-sKW"/>
+                                    <constraint firstAttribute="width" constant="25" id="YxV-qA-s0t"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1me-40-Zl5">
+                                <rect key="frame" x="156.5" y="0.0" width="8" height="91"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="onD-wa-XYq"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meT-JE-I4F">
+                                <rect key="frame" x="74" y="29" width="82.5" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="0tq-yU-gyy"/>
+                                </constraints>
+                                <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-Jp-G6t">
+                                <rect key="frame" x="164.5" y="29" width="135.5" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kPo-fp-mJP"/>
+                                </constraints>
+                                <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jeb-Jp-G6t" secondAttribute="trailing" constant="20" id="0dM-2I-upo"/>
+                            <constraint firstAttribute="bottom" secondItem="1me-40-Zl5" secondAttribute="bottom" id="4Bf-Kv-5xq"/>
+                            <constraint firstItem="1me-40-Zl5" firstAttribute="centerX" secondItem="gIU-Qk-Igb" secondAttribute="centerX" id="7Qc-zh-Xnv"/>
+                            <constraint firstItem="meT-JE-I4F" firstAttribute="centerY" secondItem="gIU-Qk-Igb" secondAttribute="centerY" id="AYH-pJ-kIJ"/>
+                            <constraint firstItem="jeb-Jp-G6t" firstAttribute="centerY" secondItem="gIU-Qk-Igb" secondAttribute="centerY" id="EHH-Rf-AuU"/>
+                            <constraint firstItem="meT-JE-I4F" firstAttribute="leading" secondItem="VP4-V0-eRr" secondAttribute="trailing" constant="2" id="EJI-nT-y3m"/>
+                            <constraint firstItem="VP4-V0-eRr" firstAttribute="leading" secondItem="gIU-Qk-Igb" secondAttribute="leading" constant="47" id="SUE-Va-xh5"/>
+                            <constraint firstItem="VP4-V0-eRr" firstAttribute="centerY" secondItem="gIU-Qk-Igb" secondAttribute="centerY" id="YiP-7p-QSf"/>
+                            <constraint firstItem="1me-40-Zl5" firstAttribute="top" secondItem="gIU-Qk-Igb" secondAttribute="top" id="bjb-Pc-nvW"/>
+                            <constraint firstItem="1me-40-Zl5" firstAttribute="leading" secondItem="meT-JE-I4F" secondAttribute="trailing" id="hY0-IO-pqf"/>
+                            <constraint firstItem="jeb-Jp-G6t" firstAttribute="leading" secondItem="1me-40-Zl5" secondAttribute="trailing" id="krz-qp-bhA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="gIU-Qk-Igb" secondAttribute="bottom" id="9fu-BV-PH0"/>
+                    <constraint firstAttribute="trailing" secondItem="gIU-Qk-Igb" secondAttribute="trailing" id="Ey5-63-FUy"/>
+                    <constraint firstItem="gIU-Qk-Igb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yva-F8-uLQ"/>
+                    <constraint firstItem="gIU-Qk-Igb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kMf-wr-aak"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageIcon" destination="VP4-V0-eRr" id="87h-MD-xT7"/>
+                <outlet property="tfFirstName" destination="meT-JE-I4F" id="ce7-NY-W9L"/>
+                <outlet property="tfLastName" destination="jeb-Jp-G6t" id="xLb-XO-wug"/>
+            </connections>
+            <point key="canvasLocation" x="30" y="47.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconProfileNonactive.png" width="16" height="18"/>
+    </resources>
+</document>

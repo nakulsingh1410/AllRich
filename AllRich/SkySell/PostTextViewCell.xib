@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PostTextViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTextViewCell" rowHeight="161" id="KGk-i7-Jjw" customClass="PostTextViewCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="160.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C76-gj-HtM">
+                        <rect key="frame" x="22" y="1" width="276" height="158.5"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Describe what you are selling…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mh9-cb-Y8h">
+                                <rect key="frame" x="14" y="16" width="248" height="20"/>
+                                <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="13F-Bf-iw7">
+                                <rect key="frame" x="8" y="8" width="260" height="143"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="13F-Bf-iw7" firstAttribute="leading" secondItem="C76-gj-HtM" secondAttribute="leading" constant="8" id="6ut-MQ-J2Z"/>
+                            <constraint firstItem="Mh9-cb-Y8h" firstAttribute="leading" secondItem="C76-gj-HtM" secondAttribute="leading" constant="14" id="Pyy-ri-roe"/>
+                            <constraint firstAttribute="trailing" secondItem="13F-Bf-iw7" secondAttribute="trailing" constant="8" id="SZz-wm-I1s"/>
+                            <constraint firstAttribute="bottom" secondItem="13F-Bf-iw7" secondAttribute="bottom" constant="8" id="Y7E-OF-LAG"/>
+                            <constraint firstAttribute="trailing" secondItem="Mh9-cb-Y8h" secondAttribute="trailing" constant="14" id="kDV-Uu-km0"/>
+                            <constraint firstItem="13F-Bf-iw7" firstAttribute="top" secondItem="C76-gj-HtM" secondAttribute="top" constant="8" id="rE4-HS-tpd"/>
+                            <constraint firstItem="Mh9-cb-Y8h" firstAttribute="top" secondItem="C76-gj-HtM" secondAttribute="top" constant="16" id="zcf-NR-XcQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="C76-gj-HtM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="Ecm-Ge-20J"/>
+                    <constraint firstAttribute="trailing" secondItem="C76-gj-HtM" secondAttribute="trailing" constant="22" id="Hnf-h3-7Bw"/>
+                    <constraint firstAttribute="bottom" secondItem="C76-gj-HtM" secondAttribute="bottom" constant="1" id="UBH-FF-1mF"/>
+                    <constraint firstItem="C76-gj-HtM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="eul-4p-2i1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tfPlaceholder" destination="Mh9-cb-Y8h" id="TK2-2A-hPw"/>
+                <outlet property="tvInput" destination="13F-Bf-iw7" id="z4H-ab-ssp"/>
+                <outlet property="viTextBG" destination="C76-gj-HtM" id="HDD-jU-iOr"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="112.5"/>
+        </tableViewCell>
+    </objects>
+</document>

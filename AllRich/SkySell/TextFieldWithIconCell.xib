@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TextFieldWithIconCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldWithIconCell" rowHeight="70" id="KGk-i7-Jjw" customClass="TextFieldWithIconCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N84-8X-Ulz">
+                        <rect key="frame" x="47" y="0.0" width="273" height="70"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQF-7R-72T">
+                                <rect key="frame" x="0.0" y="23" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="XZK-VX-zP8"/>
+                                    <constraint firstAttribute="height" constant="25" id="igD-eb-fw4"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTC-za-CsQ">
+                                <rect key="frame" x="27" y="19" width="226" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="a2O-b4-wdB"/>
+                                </constraints>
+                                <color key="textColor" red="0.15294117647058825" green="0.18431372549019609" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tTC-za-CsQ" firstAttribute="centerY" secondItem="N84-8X-Ulz" secondAttribute="centerY" id="Cj6-Jn-zOZ"/>
+                            <constraint firstItem="iQF-7R-72T" firstAttribute="centerY" secondItem="N84-8X-Ulz" secondAttribute="centerY" id="DqE-Gg-PKK"/>
+                            <constraint firstItem="tTC-za-CsQ" firstAttribute="leading" secondItem="iQF-7R-72T" secondAttribute="trailing" constant="2" id="f13-Iw-klu"/>
+                            <constraint firstAttribute="trailing" secondItem="tTC-za-CsQ" secondAttribute="trailing" constant="20" id="gZ7-Lh-Mx5"/>
+                            <constraint firstItem="iQF-7R-72T" firstAttribute="leading" secondItem="N84-8X-Ulz" secondAttribute="leading" id="wRr-AR-yJE"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YF-gy-7Hd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4YF-gy-7Hd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1qf-A5-Y4X"/>
+                    <constraint firstItem="N84-8X-Ulz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mj3-cD-ZNb"/>
+                    <constraint firstAttribute="bottom" secondItem="4YF-gy-7Hd" secondAttribute="bottom" id="a8R-Mo-bcp"/>
+                    <constraint firstAttribute="trailing" secondItem="N84-8X-Ulz" secondAttribute="trailing" id="dCQ-qS-dKl"/>
+                    <constraint firstAttribute="trailing" secondItem="4YF-gy-7Hd" secondAttribute="trailing" id="f3A-bo-Nfr"/>
+                    <constraint firstAttribute="bottom" secondItem="N84-8X-Ulz" secondAttribute="bottom" id="jvs-Fo-7l9"/>
+                    <constraint firstItem="N84-8X-Ulz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="47" id="qyv-xi-aZ1"/>
+                    <constraint firstItem="4YF-gy-7Hd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qyw-uX-k5K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="button" destination="4YF-gy-7Hd" id="XcZ-Xn-GeE"/>
+                <outlet property="imageIcon" destination="iQF-7R-72T" id="pGw-CQ-2wy"/>
+                <outlet property="tfInput" destination="tTC-za-CsQ" id="EE5-R8-zMH"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="28"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mail.png" width="18" height="13"/>
+    </resources>
+</document>

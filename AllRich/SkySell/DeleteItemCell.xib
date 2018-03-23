@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DeleteItemCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeleteItemCell" rowHeight="75" id="KGk-i7-Jjw" customClass="DeleteItemCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nc-b9-ash">
+                        <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="2VH-z4-jwp"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvf-fS-aGy">
+                        <rect key="frame" x="53" y="27.5" width="259" height="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                        <color key="textColor" red="0.90196078430000004" green="0.19215686269999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDelete.png" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-Kl-ifE">
+                        <rect key="frame" x="22" y="25.5" width="23" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="csR-7H-DwJ"/>
+                            <constraint firstAttribute="height" constant="24" id="xCF-JT-hKj"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2oU-Kl-ifE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="27H-Bu-LOc"/>
+                    <constraint firstAttribute="trailing" secondItem="rvf-fS-aGy" secondAttribute="trailing" constant="8" id="LPU-Io-yzE"/>
+                    <constraint firstItem="2oU-Kl-ifE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="NPb-4H-RQi"/>
+                    <constraint firstItem="3Nc-b9-ash" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YVk-s2-pgP"/>
+                    <constraint firstAttribute="trailing" secondItem="3Nc-b9-ash" secondAttribute="trailing" id="Yfo-cs-G7c"/>
+                    <constraint firstItem="3Nc-b9-ash" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jbb-Do-ir0"/>
+                    <constraint firstItem="rvf-fS-aGy" firstAttribute="leading" secondItem="2oU-Kl-ifE" secondAttribute="trailing" constant="8" id="ooC-OC-31J"/>
+                    <constraint firstItem="rvf-fS-aGy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sgW-Ds-geN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageIcon" destination="2oU-Kl-ifE" id="7N7-gi-0QH"/>
+                <outlet property="lbTitle" destination="rvf-fS-aGy" id="WGO-Ym-v6o"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="69.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iconDelete.png" width="23" height="24"/>
+    </resources>
+</document>

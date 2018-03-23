@@ -1,0 +1,458 @@
+//
+//  PKLazyImage.swift
+//  DownloadImage
+//
+//  Created by DW02 on 4/7/2560 BE.
+//  Copyright © 2560 DW02. All rights reserved.
+//
+
+import UIKit
+
+class PKLazyImage: UIView {
+
+    enum ImageLoaderMode{
+        case localFile
+        case filePath
+        case url
+    }
+    
+    var image:UIImageView! = nil
+    
+    
+    var defaultImageContentMode:UIViewContentMode = UIViewContentMode.scaleAspectFill
+    var imageContentMode:UIViewContentMode = UIViewContentMode.scaleAspectFill
+    
+
+    var imageName:String = ""
+    
+    var imageURL:String = ""
+    var imageMethods:String = ""
+    var request:URLRequest! = nil
+    
+    
+    var loadMode:ImageLoaderMode = .localFile
+    
+    var defaultImage:UIImage! = nil
+
+ 
+    
+    
+    
+    var loadImage:UIImage! = nil
+    var loadImageWorking:Bool = false
+    var workOnImageName:String = ""
+    
+ 
+    var haveNoti:Bool = false
+    
+    
+    var myDownload:PKDownloadImage = PKDownloadImage.sharedInstance
+    
+    
+    let loadImageQueue = OperationQueue()
+    
+    
+    
+    var viProgressBar:GradientContainerView! = nil
+    
+    convenience init() {
+        self.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    }
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupView()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setupView()
+    }
+    
+    func setupView() {
+        
+    
+        
+        if self.image == nil {
+            self.image = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+            
+            
+            self.image.backgroundColor = UIColor.clear
+            
+            
+            self.addSubview(self.image)
+
+        }
+       
+        
+        
+        if(self.viProgressBar == nil){
+            self.viProgressBar = GradientContainerView(frame: .zero)
+            self.viProgressBar.backgroundColor = UIColor(red: (223/255), green: (223/255), blue: (223/255), alpha: 1.0)
+            self.viProgressBar.clipsToBounds = true
+            self.viProgressBar.layer.cornerRadius = 4
+            self.addSubview(self.viProgressBar)
+            
+            
+            
+            self.gradientLayers.forEach { gradientLayer in
+                let baseColor = self.viProgressBar.backgroundColor!
+                gradientLayer.colors = [baseColor.cgColor,
+                                        baseColor.brightened(by: 0.93).cgColor,
+                                        baseColor.cgColor]
+            }
+            
+            
+            self.slide(to: .right)
+            
+            
+            
+            
+            
+        }
+        
+        
+        if(self.haveNoti == false){
+            NotificationCenter.default.addObserver(self, selector: #selector(PKLazyImage.reciveNotiDownloadfinish(notification:)), name:NSNotification.Name(rawValue: "PKLazyImageDownloadFinish"), object: nil)
+            
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(PKLazyImage.reciveNotiLoadFilePathFinish(notification:)), name:NSNotification.Name(rawValue: "PKLazyImageLoadFileFinish"), object: nil)
+            
+        }
+    }
+    
+    deinit {
+        if(self.haveNoti == true){
+            self.haveNoti = false
+        
+            
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "PKLazyImageDownloadFinish"), object: nil)
+            
+            
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "PKLazyImageLoadFileFinish"), object: nil)
+            
+            
+        }
+    }
+    
+
+    
+    func reciveNotiDownloadfinish(notification:NSNotification){
+        
+        
+        
+        //print(notification.userInfo)
+        
+        if let fURL = notification.userInfo?["URL"] as? String {
+            
+            if let fMethod = notification.userInfo?["Method"] as? String {
+                //print("finish download \(fURL)")
+                
+                if((self.imageURL == fURL) && (self.imageMethods == fMethod)){
+                    
+                    
+                    self.loadMode = .url
+  
+                    self.loadImageWithURL(strURL: self.imageURL, ImageContent: self.imageContentMode, HTTPMethods: self.imageMethods, Request: self.request)
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+            }
+          
+            
+        }
+        
+    }
+    
+    
+    
+    
+    func reciveNotiLoadFilePathFinish(notification:NSNotification){
+        
+        
+        
+        //print("----- reciveNotiLoadFilePathFinish  -----")
+        var thisImage:Bool = false
+        if let image = notification.userInfo?["Image"] as? UIImage {
+            
+            if let fPath = notification.userInfo?["FilePath"] as? String {
+                //print("finish download \(fPath)")
+                
+                if(self.imageName == fPath){
+                    
+                    
+                    thisImage = true
+                 
+                    DispatchQueue.main.async {
+                        self.loadImage = image
+                        self.image.image = self.loadImage
+                        self.image.contentMode = self.imageContentMode
+                        self.loadImageWorking = false
+                        
+                        self.image.alpha = 1
+                        self.viProgressBar.alpha = 0
+                        
+                        
+                    }
+                    
+
+                    
+                    
+                }
+               
+                
+                
+            }
+            
+            
+        }
+        
+        if((thisImage == false) && (self.loadImage == nil)){
+            DispatchQueue.main.async {
+                
+                self.image.alpha = 0
+                self.viProgressBar.alpha = 1
+//                self.image.image = self.defaultImage
+//                self.image.contentMode = self.defaultImageContentMode
+            }
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    func updateImageSize(size:CGSize) {
+        
+        if self.image == nil {
+            self.setupView()
+        }
+        
+        self.image.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        
+        self.viProgressBar.frame = CGRect(x: 8, y: (size.width - 8) / 2.0, width: size.width - 16, height: 8)
+        
+        self.viProgressBar.gradientLayer.frame = CGRect(x: 0, y: 0, width: size.width - 16, height: 8)
+    }
+    
+    func setupDefaultImage(DefaultImage dImage:UIImage?, DefaultImageContent dContentMode:UIViewContentMode) {
+        
+        self.defaultImageContentMode = dContentMode
+        
+        if(dImage != nil){
+            self.defaultImage = dImage
+        }else{
+            self.defaultImage = nil
+        }
+        
+    }
+    
+    func loadImageWithImageName(imagename:String, ImageContent contentMode:UIViewContentMode) {
+      
+        self.imageContentMode = contentMode
+        
+        self.loadMode = .localFile
+        
+        if(self.imageName != imagename){
+            self.imageName = imagename
+            self.loadImage = nil
+            
+            self.image.image = self.defaultImage
+            self.image.contentMode = self.defaultImageContentMode
+            
+            
+            if(self.loadImageWorking == false){
+                self.loadImageWorking = true
+                self.workOnImageName = imagename
+                
+                
+                //let workerQueue = DispatchQueue(label: "com.loadimage.worker", attributes: .concurrent)
+                let defaultQueue = DispatchQueue.global(qos: .userInteractive)
+                //let mainQueue = DispatchQueue.main
+                defaultQueue.async {
+                    
+                    self.loadImageWorking = false
+                    
+                    //sleep(3)//for test
+                    if(self.workOnImageName == self.imageName){
+                        self.loadImage = UIImage(named: self.imageName)
+                        self.image.image = self.loadImage
+                        self.image.contentMode = self.imageContentMode
+                    }else{
+                        
+                        let newName = self.imageName
+                        self.imageName = self.workOnImageName
+                        self.loadImageWithImageName(imagename: newName, ImageContent: self.imageContentMode)
+                    }
+
+                    
+                }
+            }
+            
+            
+        }else{
+            if let im = self.loadImage{
+                self.image.image = im
+                self.image.contentMode = self.imageContentMode
+            }else{
+                //self.image.image = self.defaultImage
+                //self.image.contentMode = self.defaultImageContentMode
+            }
+        }
+        
+    }
+    
+    
+    
+    func loadImageWithContentsOfFile(path:String, ImageContent contentMode:UIViewContentMode){
+        
+      
+        self.imageContentMode = contentMode
+        
+        self.loadMode = .filePath
+        
+        if(self.imageName != path){
+            self.imageName = path
+            
+            
+            self.viProgressBar.alpha = 1
+            self.loadImage = nil
+            self.image.alpha = 0
+//            self.image.image = self.defaultImage
+//            self.image.contentMode = self.defaultImageContentMode
+            
+            
+          
+            let imFilePathObj:ImageFilePathOperation = ImageFilePathOperation(filePath: path)
+            
+            self.loadImageQueue.addOperation(imFilePathObj)
+          
+            
+            
+            
+            
+       
+            
+        }else{
+            if let im = self.loadImage{
+                self.viProgressBar.alpha = 0
+                self.image.alpha = 1
+                self.image.image = im
+                self.image.contentMode = self.imageContentMode
+            }else{
+                self.viProgressBar.alpha = 1
+                self.image.alpha = 0
+                self.image.image = self.defaultImage
+                self.image.contentMode = self.defaultImageContentMode
+            }
+        }
+        
+        
+    }
+ 
+    
+    func loadImageWithURL(strURL:String, ImageContent contentMode:UIViewContentMode, HTTPMethods methods:String, Request request:URLRequest){
+        
+        
+        
+        self.loadMode = .url
+        self.imageURL = strURL
+        self.imageMethods = methods
+        self.request = request
+        
+        self.imageContentMode = contentMode
+        
+        
+        
+        let downloadItem:PKDownloadItem? = self.myDownload.getImageWithURL(strURL: strURL, HTTPMethods: methods, Request: request)
+        if let downloadItem = downloadItem{
+            if(downloadItem.status == .finish){
+                
+                
+                self.loadImageWithContentsOfFile(path: downloadItem.filePath, ImageContent: self.imageContentMode)
+                
+                //self.image.image = UIImage(contentsOfFile: downloadItem.filePath)
+                //self.image.contentMode = self.imageContentMode
+            }else{
+                
+            }
+        }else{
+            self.viProgressBar.alpha = 1
+            self.image.alpha = 0
+            self.image.image = self.defaultImage
+            self.image.contentMode = self.defaultImageContentMode
+        }
+        
+        
+    }
+    
+    
+    func loadImageWithGetURL(strURL:String, ImageContent contentMode:UIViewContentMode) {
+        
+        let newLoad:PKLazyImageHelpObject = PKLazyImageHelpObject()
+        let str = strURL
+        //print(">>>>>\(str)")
+        
+        newLoad.strURL = str
+        newLoad.contentMode = .scaleAspectFill
+        newLoad.methods = "GET"
+        self.viProgressBar.alpha = 1
+        self.image.alpha = 0
+        
+        
+        
+        let urlUpdate:URL? = URL(string: str)
+        if let urlUpdate = urlUpdate{
+            var request = URLRequest(url: urlUpdate)
+            request.httpMethod = "GET"
+            newLoad.request = request
+            
+            self.loadImageWithURL(strURL: str, ImageContent: contentMode, HTTPMethods: "GET", Request: request)
+        }else{
+            self.viProgressBar.alpha = 1
+            self.image.alpha = 0
+            //self.image.image = self.defaultImage
+            //self.image.contentMode = self.defaultImageContentMode
+        }
+        
+    }
+    
+    
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
+
+
+extension PKLazyImage:GradientsOwner{
+    
+    var gradientLayers: [CAGradientLayer] {
+        return [viProgressBar.gradientLayer]
+    }
+}
+
+
+
+class PKLazyImageHelpObject{
+    var strURL:String = ""
+    var contentMode:UIViewContentMode = .scaleAspectFill
+    var request:URLRequest! = nil
+    var methods:String = "GET"
+}

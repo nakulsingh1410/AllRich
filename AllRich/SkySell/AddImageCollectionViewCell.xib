@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AddImageCollectionViewCell" reuseIdentifier="AddImageCollectionViewCell" id="gTV-IL-0wX" customClass="AddImageCollectionViewCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="99"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="99"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvJ-5j-V9c">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="99"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconAddPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="GT2-AT-csD">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="99"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GT2-AT-csD" secondAttribute="trailing" id="PXx-AR-15o"/>
+                            <constraint firstAttribute="bottom" secondItem="GT2-AT-csD" secondAttribute="bottom" id="ZJR-c3-7ob"/>
+                            <constraint firstItem="GT2-AT-csD" firstAttribute="leading" secondItem="VvJ-5j-V9c" secondAttribute="leading" id="aXj-fO-pL1"/>
+                            <constraint firstItem="GT2-AT-csD" firstAttribute="top" secondItem="VvJ-5j-V9c" secondAttribute="top" id="vSM-fv-7oa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="VvJ-5j-V9c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1F8-7J-HVm"/>
+                <constraint firstAttribute="trailing" secondItem="VvJ-5j-V9c" secondAttribute="trailing" id="IYF-99-4bX"/>
+                <constraint firstAttribute="bottom" secondItem="VvJ-5j-V9c" secondAttribute="bottom" id="qN9-Za-aKI"/>
+                <constraint firstItem="VvJ-5j-V9c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yoc-4u-p0g"/>
+            </constraints>
+            <size key="customSize" width="111" height="120"/>
+            <connections>
+                <outlet property="imageBG" destination="GT2-AT-csD" id="Lue-LP-uwr"/>
+                <outlet property="viBackgroud" destination="VvJ-5j-V9c" id="LdV-Qy-MaC"/>
+            </connections>
+            <point key="canvasLocation" x="-39" y="-45.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="iconAddPhoto.png" width="25" height="24"/>
+    </resources>
+</document>

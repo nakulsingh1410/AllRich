@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProductHeaderCell" reuseIdentifier="ProductHeaderCell" id="gTV-IL-0wX" customClass="ProductHeaderCell" customModule="SkySell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="215" height="151"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="215" height="151"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-Zy-SOU">
+                        <rect key="frame" x="0.0" y="0.0" width="215" height="151"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ivi-Zy-SOU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="18O-KA-Ctg"/>
+                <constraint firstAttribute="trailing" secondItem="ivi-Zy-SOU" secondAttribute="trailing" id="6bR-XJ-MZ3"/>
+                <constraint firstAttribute="bottom" secondItem="ivi-Zy-SOU" secondAttribute="bottom" id="Cx8-cy-89r"/>
+                <constraint firstItem="ivi-Zy-SOU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="g9H-Qm-F5s"/>
+            </constraints>
+            <size key="customSize" width="215" height="151"/>
+            <connections>
+                <outlet property="viBG" destination="ivi-Zy-SOU" id="Fhd-uk-PeC"/>
+            </connections>
+            <point key="canvasLocation" x="-1.5" y="69.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
