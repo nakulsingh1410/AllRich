@@ -11,48 +11,7 @@ import UIKit
 class Global: NSObject {
 
     
-    class func navigateToPayment(navigationController:UINavigationController?,email:String,userId:String){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: PaymentViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "PaymentViewController") as? PaymentViewController{
-            vcObj.email = email
-            vcObj.userId = userId
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
-    }
-    
-    class func navigateToHome(navigationController:UINavigationController?){
-        let storyboard = UIStoryboard(name: "Main", bundle:  nil )
-        if let vc:UserMainSceneVC = storyboard.instantiateViewController(withIdentifier: "UserMainSceneVC") as? UserMainSceneVC {
-            SkySell.showTapBar(show: true)
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    
-    func showTapBar(show:Bool) {
-        var object:[String:Bool] = [String:Bool]()
-        object["show"] = show
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SkySell_Notification_Name.HidenMainTapBar.rawValue), object: nil, userInfo: object)
-        
-        
-    }
-    
-    
-   class func moveToRoot(navigationController :UINavigationController?)  {
-    
-    DispatchQueue.main.async {
-        let alertController = UIAlertController(title:"AllRich", message: "Registeed Successfully!!", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-            navigationController?.popToRootViewController(animated: true)
-        }
-        alertController.addAction(cancelAction)
-        navigationController?.present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    }
-    
+   
     
     class func showAlert(navigationController :UINavigationController?,message:String)  {
         DispatchQueue.main.async {

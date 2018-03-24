@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var myHomeContainer:HomeContainerVC? = nil
     
     @IBOutlet weak var viMenuBarBG: UIView!
-    @IBOutlet weak var viCameraBG: UIView!
+   // @IBOutlet weak var viCameraBG: UIView!
     
     
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var viMenuBarBG_Layout_Buttom: NSLayoutConstraint!
     
-    @IBOutlet weak var btCamera_Layout_Buttom: NSLayoutConstraint!
+   // @IBOutlet weak var btCamera_Layout_Buttom: NSLayoutConstraint!
     
     
     var screenSize:CGRect = UIScreen.main.bounds
@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     
     
     var haveNoti:Bool = false
+    var isMemberPremium : Bool?
     
     
     var lastMode:HomeContainerVC.SegName = HomeContainerVC.SegName.toHome
@@ -87,17 +88,17 @@ class ViewController: UIViewController {
         self.myData.masterView = self
         
         
-        self.viCameraBG.clipsToBounds = false
-        self.btCamera.layer.cornerRadius = 17.0
-        self.btCamera.clipsToBounds = true
-        self.view.bringSubview(toFront: self.viCameraBG)
-        self.view.bringSubview(toFront: self.viMask)
-        self.viCameraBG.layer.shadowColor = UIColor(red: (8.0/255.0), green: (14.0/255.0), blue: (45.0/255.0), alpha: 1.0).cgColor
-        self.viCameraBG.layer.shadowRadius = 6
-        self.viCameraBG.layer.shadowOffset = CGSize(width: 0, height: 6)
-        self.viCameraBG.layer.shadowOpacity = 0.5
-        self.viCameraBG.backgroundColor = UIColor.clear
-        
+//        self.viCameraBG.clipsToBounds = false
+//        self.btCamera.layer.cornerRadius = 17.0
+//        self.btCamera.clipsToBounds = true
+//        self.view.bringSubview(toFront: self.viCameraBG)
+//        self.view.bringSubview(toFront: self.viMask)
+//        self.viCameraBG.layer.shadowColor = UIColor(red: (8.0/255.0), green: (14.0/255.0), blue: (45.0/255.0), alpha: 1.0).cgColor
+//        self.viCameraBG.layer.shadowRadius = 6
+//        self.viCameraBG.layer.shadowOffset = CGSize(width: 0, height: 6)
+//        self.viCameraBG.layer.shadowOpacity = 0.5
+//        self.viCameraBG.backgroundColor = UIColor.clear
+//
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -133,6 +134,7 @@ class ViewController: UIViewController {
         
         
         self.view.bringSubview(toFront: self.viMask)
+        checkUserPremium()
     }
 
     deinit {
@@ -674,21 +676,21 @@ class ViewController: UIViewController {
             print(show)
             
             if(show == true){
-                self.btCamera_Layout_Buttom.constant = 16
+               /// self.btCamera_Layout_Buttom.constant = 16
                 self.viMenuBarBG_Layout_Buttom.constant = 0
                 
                 self.viMenuBarBG.isUserInteractionEnabled = true
                 
-                self.viCameraBG.isUserInteractionEnabled = true
+               // self.viCameraBG.isUserInteractionEnabled = true
                 
                 
             }else{
-                self.btCamera_Layout_Buttom.constant = -65
+               // self.btCamera_Layout_Buttom.constant = -65
                 self.viMenuBarBG_Layout_Buttom.constant = -45
                 
                 self.viMenuBarBG.isUserInteractionEnabled = false
                 
-                self.viCameraBG.isUserInteractionEnabled = false
+               // self.viCameraBG.isUserInteractionEnabled = false
                 
             }
             
@@ -699,16 +701,16 @@ class ViewController: UIViewController {
                 
                 if(show == true){
                     self.viMenuBarBG.alpha = 1
-                    self.viCameraBG.alpha = 1
+                  //  self.viCameraBG.alpha = 1
                     
                     self.viMenuBarBG.isUserInteractionEnabled = true
-                    self.viCameraBG.isUserInteractionEnabled = true
+                   // self.viCameraBG.isUserInteractionEnabled = true
                 }else{
                     self.viMenuBarBG.alpha = 0
-                    self.viCameraBG.alpha = 0
+                    //self.viCameraBG.alpha = 0
                     
                     self.viMenuBarBG.isUserInteractionEnabled = false
-                    self.viCameraBG.isUserInteractionEnabled = false
+                    //self.viCameraBG.isUserInteractionEnabled = false
                 }
                 
                 
@@ -823,7 +825,22 @@ class ViewController: UIViewController {
     }
     
     
+    
     // MARK: - Action
+    
+    @IBAction func btnUpgradePlanTapped(_ sender: Any) {
+        
+        if let isPremium = isMemberPremium {
+            if isPremium == true {
+                showActionSheetForPremiumMember()
+            }else{
+                 showActionSheetForPremiumMember()
+            }
+        }else{
+            checkUserPremium()
+        }
+    }
+    
     
     @IBAction func tapOnHome(_ sender: UIButton) {
         
@@ -1137,7 +1154,81 @@ extension ViewController:HomeContainerDelegate{
 
 
 
+extension ViewController{
+    
+    func showActionSheetForFreeMember()  {
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
+        let upgradePlan = UIAlertAction(title: "Upgrade Plan", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let email = ShareData.sharedInstance.userInfo.email
+            let userId = ShareData.sharedInstance.userInfo.uid
+            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:false)
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        
+        // 4
+        optionMenu.addAction(upgradePlan)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    func showActionSheetForPremiumMember()  {
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // 2
+        let topUp = UIAlertAction(title: "Top up Points", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let email = ShareData.sharedInstance.userInfo.email
+            let userId = ShareData.sharedInstance.userInfo.uid
+            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:true)
+        })
+        let viewPayment = UIAlertAction(title: "Payment History", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        //3
+        let inviteFriend = UIAlertAction(title: "Refer & Earn", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+             NavigationManager.navigateToReferAndEarn(navigationController: self.navigationController)
+            
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        
+        // 4
+        optionMenu.addAction(topUp)
+        optionMenu.addAction(viewPayment)
+
+        optionMenu.addAction(inviteFriend)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+}
+
+//MARK: API
+extension ViewController {
+    func checkUserPremium()  {
+        WebServiceModel.isPremiunMember { (isPremium) in
+            self.isMemberPremium = isPremium
+        }
+    }
+    
+}
 
 
 

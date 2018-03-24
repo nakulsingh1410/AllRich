@@ -27,6 +27,7 @@ class PaymentViewController: UIViewController {
     var cardToken = ""
     var userId = ""
     var email = ""
+    var isTopup = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +39,15 @@ class PaymentViewController: UIViewController {
         
         txtFCardNumber.delegate = self
         txtFCVC.delegate = self
-        btnBack.isHidden = true
+        
+        
+        if isTopup {
+            btnBack.isHidden = false
+            btnSkip.isHidden = true
+        }else{
+            btnBack.isHidden = true
+            btnSkip.isHidden = false
+        }
         
     }
 
@@ -199,21 +208,17 @@ extension PaymentViewController{
     //processStripePayment API
     func processStripePayment()  {
         Global.showHud()
+        
+        let paymenttype =  (isTopup == true) ? "Top-Up" : "Inital"
+        
         let parameters = ["email":email,
                           "amount":txtFAmoutPaid.text!,
                           "cardToken":cardToken,
                           "cardnumber":txtFCardNumber.text!.trimmingCharacters(in: .whitespaces),
-                          "paymentType":"Inital",
+                          "paymentType":paymenttype,
                           "cardHolderName":txtFCardHolderName.text!,
                           "userId":userId]
-        
-//        'email': 'manohar922@gmail.com',
-//        'cardnumber': '4242 4242 4242 4242', amount: '44',
-//        'cardToken': 'tok_1C60OgBUltA3XXP7CNykJSoP',
-//        'paymentType': 'Inital', // Inital (or) Top-Up
-//        'cardHolderName': 'manhohar',
-//        'userId': 'X4OitNT3xBSJNA5try7ZF186BoA2'
-        
+
         guard let url = URL(string: "https://us-central1-newmybanknotes.cloudfunctions.net/processStripePayment") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -232,7 +237,11 @@ extension PaymentViewController{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]{
                         print(json)
                         if  let status = json["status"] as? String, status  == "success" {
-                            Global.moveToRoot(navigationController:self.navigationController)
+                            if self.isTopup {
+                                NavigationManager.popWithAlert(navigationController:self.navigationController)
+                            }else{
+                                NavigationManager.moveToRoot(navigationController:self.navigationController)
+                            }
                         }
                     }
                 } catch {
@@ -270,7 +279,7 @@ extension PaymentViewController{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
                         print(json)
                         if  let status = json["status"] as? String, status  == "success" {
-                            Global.moveToRoot(navigationController:self.navigationController)
+                            NavigationManager.moveToRoot(navigationController:self.navigationController)
                         }else{
                             Global.showAlert(navigationController: self.navigationController, message:"Some error occured")
                         }

@@ -113,51 +113,29 @@ class LoginVC: UIViewController {
         self.viTopBar.backgroundColor = UIColor.white
         self.viTopBar.isUserInteractionEnabled = false
         
-        
         self.viTopBar.layer.shadowColor = UIColor.white.cgColor//UIColor(red: (8.0/255.0), green: (14.0/255.0), blue: (45.0/255.0), alpha: 1.0).cgColor
         self.viTopBar.layer.shadowRadius = 1
         self.viTopBar.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.viTopBar.layer.shadowOpacity = 0.0
         self.viTopBar.backgroundColor = UIColor.clear
-        
-        
-        
-       
-        
-        
         self.viSignUpBG.layer.shadowColor = UIColor(red: (8.0/255.0), green: (14.0/255.0), blue: (45.0/255.0), alpha: 1.0).cgColor
         self.viSignUpBG.layer.shadowRadius = 1
         self.viSignUpBG.layer.shadowOffset = CGSize(width: 0, height: -1)
         self.viSignUpBG.layer.shadowOpacity = 0.5
         //self.viSignUpBG.backgroundColor = UIColor.clear
-        
-        
-        
+    
         self.strEmail = self.myData.loadsaveUserEmail()
         self.strPassword = self.myData.loadsaveUserPassword()
-        
-        
-        
-        
         self.view.bringSubview(toFront: viTopBar)
-        
-        
-   
         self.view.bringSubview(toFront: btClose)
-        
-        
-        
         
         if(self.myData.userInfo != nil){
             if(self.myData.userInfo.uid.count > 5){
                 self.showTapBar(show: true)
-                
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
                 let vc:UserMainSceneVC = storyboard.instantiateViewController(withIdentifier: "UserMainSceneVC") as! UserMainSceneVC
-                
                 self.navigationController?.pushViewController(vc, animated: false)
             }
-            
         }
     }
 
@@ -178,8 +156,6 @@ class LoginVC: UIViewController {
             
             self.haveNoti = true
         }
-        
-        
         
         if(forceLogin == false){
             if(FIRAuth.auth()?.currentUser != nil){
@@ -291,62 +267,35 @@ class LoginVC: UIViewController {
     
     
     @IBAction func tapOnSignup(_ sender: UIButton) {
-        
-        
-        
-        
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
         let vc:CreateAccount = storyboard.instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
         
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
+
     func loginWithFacebook() {
-        
         self.addActivityView {
             self.facebookLogin()
         }
     }
-    
-    
+
     func loginWithGoogle() {
-        
-        
         self.addActivityView {
-            
             //print("\(FIRApp.defaultApp()?.options.clientID)")
             GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
             GIDSignIn.sharedInstance().delegate = self
             GIDSignIn.sharedInstance().uiDelegate = self
             GIDSignIn.sharedInstance().signIn()
-            
         }
-        
     }
-    
-    
+
     func loginWithEmail() {
-        
         var canLogin:Bool = true
         var errorTitle:String = ""
-        
-        
         let nssEmail:NSString = NSString(format: "%@", self.strEmail)
         let atRange:NSRange = nssEmail.range(of: "@")
-        
-        
-        
-        
+
         if((self.strEmail.count < 3) || (atRange.length <= 0)){
             errorTitle = "Your email address is invalid, please try again"
             canLogin = false
@@ -354,55 +303,31 @@ class LoginVC: UIViewController {
             errorTitle = "Please enter your password"
             canLogin = false
         }
-        
-        
         if(canLogin == false){
-
-            
             let alertController = UIAlertController(title: errorTitle, message: nil, preferredStyle: .alert)
-            
             let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
               
             }
             alertController.addAction(cancelAction)
-            
-            
             self.present(alertController, animated: true, completion: nil)
         }else{
-            
-            
-            
-            
-            
-            
-            
             self.addActivityView {
-                
-                
                 // [START headless_email_auth]
                 FIRAuth.auth()?.signIn(withEmail: self.strEmail, password: self.strPassword) { (user, error) in
                     // [START_EXCLUDE]
                     self.removeActivityView {
-                        
-                        
                         if let error = error {
-                            
-                            
                             let alertController = UIAlertController(title: "Can't Login", message: error.localizedDescription, preferredStyle: .alert)
                             
                             let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
                                 
                             }
                             alertController.addAction(cancelAction)
-                            
-                            
                             self.present(alertController, animated: true, completion: nil)
                             
                             return
                         }else{
-                            
-                            
-                            
+
                             if let user = user{
                                 if (user.isEmailVerified == false){
                                     let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.strEmail).", preferredStyle: .alert)
@@ -425,9 +350,7 @@ class LoginVC: UIViewController {
                                     print ("Email verified. Signing in...")
                                     
                                     self.user_uid = user.uid
-                                    
                                     self.loginSuccess = true
-                                    
                                     
                                     self.myData.saveUserEmail(UID: self.strEmail)
                                     self.myData.saveUserPassword(UID: self.strPassword)
@@ -442,22 +365,11 @@ class LoginVC: UIViewController {
                                 }
                             }
                             
-                            
-                            
-                            
-                           
-                            
-                            
-                            
                         }
                     }
                     // [END_EXCLUDE]
                 }
                 // [END headless_email_auth]
-                
-                
-                
-                
             }
             
         }
@@ -511,8 +423,7 @@ class LoginVC: UIViewController {
     func facebookLogin() {
         let fbLoginManager = FBSDKLoginManager()
         
-        if let currentAccessToken = FBSDKAccessToken.current(), currentAccessToken.appID != FBSDKSettings.appID()
-        {
+        if let currentAccessToken = FBSDKAccessToken.current(), currentAccessToken.appID != FBSDKSettings.appID(){
             fbLoginManager.logOut()
         }
         
@@ -520,7 +431,6 @@ class LoginVC: UIViewController {
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if let error = error {
                 print("Failed to login: \(error.localizedDescription)")
-                
                 
                 self.removeActivityView {
                     print("Login error: \(error.localizedDescription)")
@@ -580,7 +490,6 @@ class LoginVC: UIViewController {
                     if let user = user{
                         self.user_uid = user.uid
                         
-                        
                         self.checkReadyUser(readyHave: { (have) in
                             if(have == true){
                                 loadProductLikeByUser(uid: self.user_uid, Finish: { (arLike) in
@@ -604,17 +513,8 @@ class LoginVC: UIViewController {
                             
                         })
                     }
-                    
-                    
-                   
-                    
                 }
-                
-                
-
-                
-                
-                
+  
             })
             
             
@@ -640,21 +540,12 @@ class LoginVC: UIViewController {
                         break
                     }
                 }
-                
-                
                 readyHave(have)
-                
+
             }
-            
-            
         })
-        
-        
     }
-    
-    
-    
-    
+
     func updateFacebookUserData() {
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -700,63 +591,31 @@ class LoginVC: UIViewController {
                         }
                     }
                 }else{
-                    
+        
                     self.removeActivityView {
-                        
                         print("Login error: \(String(describing: error?.localizedDescription))")
                         let alertController = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
                         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                         alertController.addAction(okayAction)
                         self.present(alertController, animated: true, completion: nil)
-                        
                     }
-                    
-                    
-                   
                 }
-                
-               
-                
-                
             })
         }
     }
-    
-    
-    
+
     func getserverCurrency(complete:@escaping (String)->Void) {
-        
         let fRef = FIRDatabase.database().reference().child("setting").child("server_currency_Notchange")
-        
         fRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            
-            
             if let value = snapshot.value as? String{
-                
-                
-                
                 complete(value)
-                
-                
-                
             }else{
                 complete("")
             }
-            
-            
-            
-            
         }) { (error) in
             complete("")
         }
-        
     }
-    
-    
-    
-    
     func postUserInfoToServer() {
         
         self.getserverCurrency { (currency) in
@@ -765,9 +624,6 @@ class LoginVC: UIViewController {
             if(currency.count > 0){
                 strCurrency = currency
             }
-            
-            
-            
             
             let dateFormatFull:DateFormatter = DateFormatter()
             dateFormatFull.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -802,10 +658,6 @@ class LoginVC: UIViewController {
                                              "updated_at_server_timestamp":FIRServerValue.timestamp(),
                                              "user_type":"Regular"
             ]
-            
-            
-            
-            
             let postRef = FIRDatabase.database().reference().child("users").child(self.user_uid)
             
             postRef.updateChildValues(postUserData) { (error, ref) in
@@ -819,16 +671,9 @@ class LoginVC: UIViewController {
                             
                         }
                         alertController.addAction(cancelAction)
-                        
-                        
                         self.present(alertController, animated: true, completion: nil)
-                        
-                        
-                        
                     }
                 }else{
-                    
-                    
                     loadProductLikeByUser(uid: self.user_uid, Finish: { (arLike) in
                         
                         self.myData.userLike = arLike
@@ -839,23 +684,9 @@ class LoginVC: UIViewController {
                 }
             }
             
-            
-            
-            
-            
         }
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
+
     func getUserDatainfo() {
         self.myData.haveLogout = false
         
@@ -865,35 +696,21 @@ class LoginVC: UIViewController {
         postRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let value = snapshot.value as? NSDictionary{
-                
-                
                 self.myData.userInfo = UserDataModel(dictionary: value)
-                
                 self.myData.saveUserInfo(UID: self.myData.userInfo.uid)
-                
+                self.myData.saveUserReferKey(UserReferKey: self.myData.userInfo.userReferKey)
                 //print(self.myData.userInfo.first_name)
-                
-                
-              
             }
-            
-            
-            
-            
-            
+
             if(SettingData.sharedInstance.haveConnect == false){
                 SettingData.sharedInstance.startConnect()
             }
-            
             if(self.myData.productDownloading == .noData){
                 self.myData.productDownloading = .loading
                 self.myData.loadAllProduct({
                     self.myData.productDownloading = .finish
-                    
-                    
                 })
             }
-            
             getAllPlans(Finish: { (plans, secret) in
                 self.myData.bufferAllPlans = plans
                 self.myData.buuferItuneSecret = secret
@@ -902,79 +719,37 @@ class LoginVC: UIViewController {
                 
                 self.finishLogin()
             })
-            
-            
         })
-        
-        
-        
     }
-    
-    
+
     func finishLogin(){
-        
-        
-        
         if(self.myData.userInfo.status.lowercased() == "ban"){
             self.myData.userInfo = nil
-            
             self.myData.saveUserInfo(UID: "")
-            
             self.removeActivityView {
-                
                 let alertController = UIAlertController(title: "Account Banned", message: "Your user account has been banned from MyBankNotes.\nPlease contact administrator for infomation.", preferredStyle: .alert)
-                
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-                    //self.navigationController?.popViewController(animated: true)
-                    
-                 
-                    
-                    
-                    //
+
                 }
                 alertController.addAction(cancelAction)
-                
-                
                 self.present(alertController, animated: true, completion: nil)
-                
-                
-                
             }
-            
         }else{
             let setting:SettingData = SettingData()
             setting.startConnect()
-            
             if(self.myData.userInfo != nil){
                 FIRMessaging.messaging().subscribe(toTopic: self.myData.userInfo.uid)
             }
-            
             self.removeActivityView {
-                
                 let alertController = UIAlertController(title: "SUCCESS!!", message: nil, preferredStyle: .alert)
-                
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
                     //self.navigationController?.popViewController(animated: true)
-                    
                     self.gotoUserMainScene()
-                    
-                    
-                    //
                 }
                 alertController.addAction(cancelAction)
-                
-                
                 self.present(alertController, animated: true, completion: nil)
-                
-                
-                
             }
         }
-        
-        
-        
-        
-        
     }
     
     
@@ -1155,13 +930,8 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
                 self.loginWithEmail()
                 
             }
-            
-            
-            
-            
             return cell!
         }else if(indexPath.row == CellName.space3.rawValue){
-            
             
             let cell:LoginEmptyCell? = tableView.dequeueReusableCell(withIdentifier: "LoginEmptyCell", for: indexPath) as? LoginEmptyCell
             cell?.selectionStyle = .none
@@ -1170,18 +940,13 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
             return cell!
         }else if(indexPath.row == CellName.forgot.rawValue){
             
-            
             let cell:LoginForgotPasswordCell? = tableView.dequeueReusableCell(withIdentifier: "LoginForgotPasswordCell", for: indexPath) as? LoginForgotPasswordCell
             cell?.selectionStyle = .none
             cell?.clipsToBounds = true
             cell?.tag = indexPath.row
             return cell!
         }
-        
-        
-        
-        
-        
+
         let cell:LoginEmptyCell? = tableView.dequeueReusableCell(withIdentifier: "LoginEmptyCell", for: indexPath) as? LoginEmptyCell
         cell?.selectionStyle = .none
         cell?.clipsToBounds = true
@@ -1194,18 +959,11 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
     
     // MARK: - didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        
-        
-   
+
         if(indexPath.row == CellName.forgot.rawValue){
             self.forgotPassword()
         }
-        
-        
         self.myTable.deselectRow(at: indexPath, animated: true)
-        
     }
     
     
@@ -1421,30 +1179,12 @@ extension LoginVC:GIDSignInDelegate, GIDSignInUIDelegate{
                                 
                             }
                             alertController.addAction(cancelAction)
-                            
-                            
                             self.present(alertController, animated: true, completion: nil)
-                            
-                            
-                            
                         }
-                        
-                        
                     }
-                    
-                    
-                    
                 }
-                
             }
-            
-            
         }
-        
-        
-        
-        
-        
     }
     
     

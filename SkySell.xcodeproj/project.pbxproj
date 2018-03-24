@@ -66,6 +66,10 @@
 		03FAA4611ECCB4F700541695 /* PostTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FAA45F1ECCB4F700541695 /* PostTitleCell.xib */; };
 		03FAA4641ECCB8FB00541695 /* PostTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAA4621ECCB8FB00541695 /* PostTextFieldCell.swift */; };
 		03FAA4651ECCB8FB00541695 /* PostTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03FAA4631ECCB8FB00541695 /* PostTextFieldCell.xib */; };
+		30002A3C20654DE100E35556 /* WebServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30002A3B20654DE100E35556 /* WebServiceModel.swift */; };
+		30002A3F2065553500E35556 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30002A3E2065553500E35556 /* NavigationManager.swift */; };
+		30002A42206555DF00E35556 /* ReferAndEarn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30002A41206555DF00E35556 /* ReferAndEarn.storyboard */; };
+		30002A462065597A00E35556 /* ReferAndEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30002A452065597A00E35556 /* ReferAndEarnViewController.swift */; };
 		3034FA8820644B9900FF937E /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034FA8620644B9900FF937E /* HudView.swift */; };
 		3034FA8920644B9900FF937E /* HudView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3034FA8720644B9900FF937E /* HudView.xib */; };
 		3034FA8B20644BCE00FF937E /* Constarints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034FA8A20644BCE00FF937E /* Constarints.swift */; };
@@ -1352,6 +1356,10 @@
 		03FAA45F1ECCB4F700541695 /* PostTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTitleCell.xib; sourceTree = "<group>"; };
 		03FAA4621ECCB8FB00541695 /* PostTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTextFieldCell.swift; sourceTree = "<group>"; };
 		03FAA4631ECCB8FB00541695 /* PostTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTextFieldCell.xib; sourceTree = "<group>"; };
+		30002A3B20654DE100E35556 /* WebServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceModel.swift; sourceTree = "<group>"; };
+		30002A3E2065553500E35556 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		30002A41206555DF00E35556 /* ReferAndEarn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReferAndEarn.storyboard; sourceTree = "<group>"; };
+		30002A452065597A00E35556 /* ReferAndEarnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferAndEarnViewController.swift; sourceTree = "<group>"; };
 		3034FA8620644B9900FF937E /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		3034FA8720644B9900FF937E /* HudView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HudView.xib; sourceTree = "<group>"; };
 		3034FA8A20644BCE00FF937E /* Constarints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constarints.swift; sourceTree = "<group>"; };
@@ -2649,6 +2657,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		30002A3A20654DC500E35556 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				30002A3B20654DE100E35556 /* WebServiceModel.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		30002A3D2065552800E35556 /* NavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				30002A3E2065553500E35556 /* NavigationManager.swift */,
+			);
+			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		30002A40206555D000E35556 /* Refer&Earn */ = {
+			isa = PBXGroup;
+			children = (
+				30002A41206555DF00E35556 /* ReferAndEarn.storyboard */,
+				30002A452065597A00E35556 /* ReferAndEarnViewController.swift */,
+			);
+			path = "Refer&Earn";
+			sourceTree = "<group>";
+		};
 		3034FA8520644B9900FF937E /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -3669,6 +3702,9 @@
 		A79F775C1E9DD2AC007EF9B8 /* SkySell */ = {
 			isa = PBXGroup;
 			children = (
+				30002A40206555D000E35556 /* Refer&Earn */,
+				30002A3D2065552800E35556 /* NavigationManager */,
+				30002A3A20654DC500E35556 /* WebService */,
 				3069B099206171700042EE77 /* Payment */,
 				A7CF7AB61EB996B2002BAD02 /* Frameworks */,
 				A79F778B1E9DE493007EF9B8 /* Resource */,
@@ -5165,6 +5201,7 @@
 				A7086E2B1ED53402004CB3C5 /* MZ@2x.png in Resources */,
 				A7A8FBC51EF7CF25003B3447 /* AnotherImageCell.xib in Resources */,
 				A79F78591E9DE493007EF9B8 /* iconPriceonmapActive.png in Resources */,
+				30002A42206555DF00E35556 /* ReferAndEarn.storyboard in Resources */,
 				A7086CDD1ED53402004CB3C5 /* CW.png in Resources */,
 				A748D78D1F9F40B700FF7BEE /* 20.png in Resources */,
 				A7086E1C1ED53402004CB3C5 /* MU@2x.png in Resources */,
@@ -5486,6 +5523,7 @@
 				A7262C381ED29BF9006ED97F /* CategoriesTextLabelCell.swift in Sources */,
 				034D24E91EC834BB0009A139 /* PKImV3Operation.swift in Sources */,
 				A78423931F16F01E00F0B5C4 /* ReceiptManager.swift in Sources */,
+				30002A3C20654DE100E35556 /* WebServiceModel.swift in Sources */,
 				A7D61E671EE7EE9D004E1BD5 /* ChatRoomVC.swift in Sources */,
 				A7C9C3271ED7C7DB0058E97C /* RealmDataObject.swift in Sources */,
 				A70792E61EA623CD00A4DB78 /* ProductHeaderCell.swift in Sources */,
@@ -5595,6 +5633,7 @@
 				039D64951EA35B3300E665A5 /* HomeCategoryLayout.swift in Sources */,
 				A71C800C1ED424E8005E89FA /* CountryPickerVC.swift in Sources */,
 				A7C4FD711EB1D444008511E1 /* GradientTransition.swift in Sources */,
+				30002A3F2065553500E35556 /* NavigationManager.swift in Sources */,
 				A7C5098C1EE5229600939646 /* CategoriesFavoriteOperation.swift in Sources */,
 				A7E6DABB1ECD8F4B005A9B39 /* PostLocationButtonCell.swift in Sources */,
 				A76C82471EFCD0A100A10812 /* FeedbackVC.swift in Sources */,
@@ -5607,6 +5646,7 @@
 				039D64901EA354F500E665A5 /* HomeNavigationContainerVC.swift in Sources */,
 				A71C800F1ED43245005E89FA /* CountryLabelCell.swift in Sources */,
 				A758913B1F0A02D8002A7DF3 /* DeleteItemCell.swift in Sources */,
+				30002A462065597A00E35556 /* ReferAndEarnViewController.swift in Sources */,
 				039D64601EA32C7400E665A5 /* GroupVC.swift in Sources */,
 				A7C9C32E1ED804C60058E97C /* ImageCollectionViewCell.swift in Sources */,
 				A7C9C32A1ED8046F0058E97C /* ImageSliderCell.swift in Sources */,

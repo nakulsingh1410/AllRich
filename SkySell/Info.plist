@@ -25,30 +25,26 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1052689569469-1pqenr3b3r9oe762nn905nigl6dhanga</string>
+				<string>com.googleusercontent.apps.108804875186-u1st6kq2ai24gq1m9ta713rkuuu15t7h</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb824473161042219</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.1052689569469-0kl2a6rg0e02mklc7u0pcdki373u6ooo</string>
+				<string>fb157785305014888</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.1052689569469-2kosrbr4b2ubrtv4po0ku23gb92qlfga</string>
-			</array>
+			<array/>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -68,9 +64,9 @@
 		</array>
 	</dict>
 	<key>FacebookAppID</key>
-	<string>824473161042219</string>
+	<string>157785305014888</string>
 	<key>FacebookDisplayName</key>
-	<string>MyBankNotes</string>
+	<string>AllRich</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

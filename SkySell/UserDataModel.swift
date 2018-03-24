@@ -35,7 +35,7 @@ class UserDataModel: NSObject {
     var updated_at_date:Date = Date()
     var updated_at_server_timestamp:NSInteger = 0
     var user_type:String = ""
-    
+    var userReferKey : String = ""
     
     var report_id:[String] = [String]()
     
@@ -595,6 +595,9 @@ class UserDataModel: NSObject {
             self.user_type = user_type
         }
         
+        if let userReferKey = dictionary.object(forKey: "userReferKey") as? String{
+            self.userReferKey = userReferKey
+        }
         
         
         
@@ -754,42 +757,19 @@ class UserDataModel: NSObject {
         
         dicData["products"] = self.products
         
-        
-        
-        
-        
-        
-        
+    
         var profile_img:[String:String] = [String:String]()
         profile_img["name"] = self.profileImage_name
         profile_img["path"] = self.profileImage_path
         profile_img["src"] = self.profileImage_src
-        
-        
-        
         dicData["profile_img_data"] = profile_img
-        
         dicData["profile_img"] = self.profileImage_src
-        
-
         dicData["status"] = status
-        
-        
-
         dicData["uid"] = uid
-        
-        
         dicData["updated_at"] = updated_at
- 
-        
         dicData["user_type"] = user_type
-        
-        
-  
+        dicData["userReferKey"] = userReferKey
         return dicData
-        
-        
-        
     }
 }
 

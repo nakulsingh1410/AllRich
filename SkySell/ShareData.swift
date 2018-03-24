@@ -681,11 +681,28 @@ class ShareData: NSObject {
         defaults.synchronize()
     }
     
+    func saveUserReferKey(UserReferKey referKey:String){
+        
+        let defaults = UserDefaults.standard
+        defaults.set(referKey, forKey: "UserReferKey")
+        defaults.synchronize()
+    }
+    
     
     func loadsaveUserInfo_UID()->String{
         let defaults = UserDefaults.standard
         let load:String? = defaults.value(forKey: "SaveUserID") as? String
         
+        if let load = load{
+            return load
+        }else{
+            return ""
+        }
+    }
+    
+    func loadSaveUserReferKey()->String{
+        let defaults = UserDefaults.standard
+        let load:String? = defaults.value(forKey: "userReferKey") as? String
         if let load = load{
             return load
         }else{
