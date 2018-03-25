@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-lr-dkR">
-                        <rect key="frame" x="8" y="174.5" width="243" height="16.5"/>
+                        <rect key="frame" x="8" y="174.5" width="29.5" height="16.5"/>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -118,12 +124,18 @@
                             <constraint firstAttribute="trailing" secondItem="JOF-Ws-kVq" secondAttribute="trailing" constant="8" id="rvy-hG-cgB"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3w-zL-EmD">
+                        <rect key="frame" x="213.5" y="173.5" width="36.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="iCb-lr-dkR" secondAttribute="trailing" constant="8" id="2sZ-vk-gDL"/>
                 <constraint firstAttribute="trailing" secondItem="6vE-xr-dc3" secondAttribute="trailing" constant="8" id="5pE-fh-xDc"/>
                 <constraint firstItem="23L-u1-hro" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8Wu-ua-iQB"/>
+                <constraint firstItem="D3w-zL-EmD" firstAttribute="centerY" secondItem="iCb-lr-dkR" secondAttribute="centerY" id="Ef3-J8-RSY"/>
                 <constraint firstItem="E9o-iY-ETB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GMZ-J0-qys"/>
                 <constraint firstItem="iCb-lr-dkR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GY8-sF-XFB"/>
                 <constraint firstItem="6vE-xr-dc3" firstAttribute="top" secondItem="23L-u1-hro" secondAttribute="bottom" constant="8" id="INu-jJ-LOz"/>
@@ -134,8 +146,10 @@
                 <constraint firstItem="2e2-ve-y7s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Sqx-9j-KFO"/>
                 <constraint firstItem="SGd-30-Zcz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="V2U-E0-OjV"/>
                 <constraint firstAttribute="trailing" secondItem="SGd-30-Zcz" secondAttribute="trailing" id="Z95-4e-tGl"/>
+                <constraint firstItem="D3w-zL-EmD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iCb-lr-dkR" secondAttribute="trailing" constant="2" id="awq-cs-15b"/>
                 <constraint firstAttribute="trailing" secondItem="23L-u1-hro" secondAttribute="trailing" id="b9Y-RL-tlk"/>
                 <constraint firstAttribute="bottom" secondItem="2e2-ve-y7s" secondAttribute="bottom" constant="30" id="bWS-u8-iem"/>
+                <constraint firstAttribute="trailing" secondItem="D3w-zL-EmD" secondAttribute="trailing" constant="9" id="bm0-PK-Tt2"/>
                 <constraint firstItem="oum-w5-8Gr" firstAttribute="leading" secondItem="E9o-iY-ETB" secondAttribute="trailing" constant="8" id="eqX-r1-kVv"/>
                 <constraint firstAttribute="bottom" secondItem="7Vt-Nq-kmp" secondAttribute="bottom" id="gzj-uj-0h5"/>
                 <constraint firstItem="6vE-xr-dc3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="lCm-dq-0Do"/>
@@ -153,6 +167,7 @@
                 <outlet property="lbName" destination="oum-w5-8Gr" id="IAT-Ol-Qsn"/>
                 <outlet property="lbStatus" destination="JOF-Ws-kVq" id="474-0E-DL8"/>
                 <outlet property="lbTitle" destination="6vE-xr-dc3" id="4i9-dl-x20"/>
+                <outlet property="lblPoints" destination="D3w-zL-EmD" id="e5G-w2-A5y"/>
                 <outlet property="viFavoriteBG" destination="7Vt-Nq-kmp" id="FBK-GJ-I4f"/>
                 <outlet property="viImageBG" destination="23L-u1-hro" id="d5N-ie-tJR"/>
                 <outlet property="viImageOwnerBG" destination="E9o-iY-ETB" id="ZMU-FP-by3"/>

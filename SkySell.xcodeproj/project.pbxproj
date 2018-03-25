@@ -70,6 +70,12 @@
 		30002A3F2065553500E35556 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30002A3E2065553500E35556 /* NavigationManager.swift */; };
 		30002A42206555DF00E35556 /* ReferAndEarn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30002A41206555DF00E35556 /* ReferAndEarn.storyboard */; };
 		30002A462065597A00E35556 /* ReferAndEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30002A452065597A00E35556 /* ReferAndEarnViewController.swift */; };
+		3006249E2066B31D0095AD03 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006249D2066B31D0095AD03 /* PointView.swift */; };
+		300624A02066B32F0095AD03 /* PointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3006249F2066B32F0095AD03 /* PointView.xib */; };
+		300624A3206789D30095AD03 /* PaymentHistoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300624A2206789D30095AD03 /* PaymentHistoyViewController.swift */; };
+		300624A5206789E50095AD03 /* PaymentHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300624A4206789E50095AD03 /* PaymentHistory.storyboard */; };
+		300624A820678AD60095AD03 /* PaymentHistorycell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300624A620678AD60095AD03 /* PaymentHistorycell.swift */; };
+		300624A920678AD60095AD03 /* PaymentHistorycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300624A720678AD60095AD03 /* PaymentHistorycell.xib */; };
 		3034FA8820644B9900FF937E /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034FA8620644B9900FF937E /* HudView.swift */; };
 		3034FA8920644B9900FF937E /* HudView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3034FA8720644B9900FF937E /* HudView.xib */; };
 		3034FA8B20644BCE00FF937E /* Constarints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034FA8A20644BCE00FF937E /* Constarints.swift */; };
@@ -1360,6 +1366,12 @@
 		30002A3E2065553500E35556 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		30002A41206555DF00E35556 /* ReferAndEarn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReferAndEarn.storyboard; sourceTree = "<group>"; };
 		30002A452065597A00E35556 /* ReferAndEarnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferAndEarnViewController.swift; sourceTree = "<group>"; };
+		3006249D2066B31D0095AD03 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		3006249F2066B32F0095AD03 /* PointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointView.xib; sourceTree = "<group>"; };
+		300624A2206789D30095AD03 /* PaymentHistoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoyViewController.swift; sourceTree = "<group>"; };
+		300624A4206789E50095AD03 /* PaymentHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentHistory.storyboard; sourceTree = "<group>"; };
+		300624A620678AD60095AD03 /* PaymentHistorycell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistorycell.swift; sourceTree = "<group>"; };
+		300624A720678AD60095AD03 /* PaymentHistorycell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistorycell.xib; sourceTree = "<group>"; };
 		3034FA8620644B9900FF937E /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		3034FA8720644B9900FF937E /* HudView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HudView.xib; sourceTree = "<group>"; };
 		3034FA8A20644BCE00FF937E /* Constarints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constarints.swift; sourceTree = "<group>"; };
@@ -2682,6 +2694,26 @@
 			path = "Refer&Earn";
 			sourceTree = "<group>";
 		};
+		3006249C2066B30C0095AD03 /* PointView */ = {
+			isa = PBXGroup;
+			children = (
+				3006249D2066B31D0095AD03 /* PointView.swift */,
+				3006249F2066B32F0095AD03 /* PointView.xib */,
+			);
+			path = PointView;
+			sourceTree = "<group>";
+		};
+		300624A1206789BD0095AD03 /* PaymentHistory */ = {
+			isa = PBXGroup;
+			children = (
+				300624A2206789D30095AD03 /* PaymentHistoyViewController.swift */,
+				300624A4206789E50095AD03 /* PaymentHistory.storyboard */,
+				300624A620678AD60095AD03 /* PaymentHistorycell.swift */,
+				300624A720678AD60095AD03 /* PaymentHistorycell.xib */,
+			);
+			path = PaymentHistory;
+			sourceTree = "<group>";
+		};
 		3034FA8520644B9900FF937E /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -3702,6 +3734,8 @@
 		A79F775C1E9DD2AC007EF9B8 /* SkySell */ = {
 			isa = PBXGroup;
 			children = (
+				300624A1206789BD0095AD03 /* PaymentHistory */,
+				3006249C2066B30C0095AD03 /* PointView */,
 				30002A40206555D000E35556 /* Refer&Earn */,
 				30002A3D2065552800E35556 /* NavigationManager */,
 				30002A3A20654DC500E35556 /* WebService */,
@@ -4706,6 +4740,7 @@
 				A7086CFC1ED53402004CB3C5 /* EC@2x.png in Resources */,
 				A7086D0A1ED53402004CB3C5 /* ET.png in Resources */,
 				A7086DE01ED53402004CB3C5 /* LT@2x.png in Resources */,
+				300624A02066B32F0095AD03 /* PointView.xib in Resources */,
 				A7086D921ED53402004CB3C5 /* IR@2x.png in Resources */,
 				A7086C8A1ED53402004CB3C5 /* BJ@2x.png in Resources */,
 				A7086C6A1ED53402004CB3C5 /* AW@3x.png in Resources */,
@@ -5197,6 +5232,7 @@
 				A74EED991ECECF410003FCCC /* combinedShape.png in Resources */,
 				A7086DF41ED53402004CB3C5 /* ME.png in Resources */,
 				A7086EED1ED53402004CB3C5 /* TK.png in Resources */,
+				300624A5206789E50095AD03 /* PaymentHistory.storyboard in Resources */,
 				A7086CEB1ED53402004CB3C5 /* DE@3x.png in Resources */,
 				A7086E2B1ED53402004CB3C5 /* MZ@2x.png in Resources */,
 				A7A8FBC51EF7CF25003B3447 /* AnotherImageCell.xib in Resources */,
@@ -5361,6 +5397,7 @@
 				A7086C4F1ED53402004CB3C5 /* AG@3x.png in Resources */,
 				A74EED9A1ECECF410003FCCC /* combinedShape@2x.png in Resources */,
 				A7086D6A1ED53402004CB3C5 /* HK.png in Resources */,
+				300624A920678AD60095AD03 /* PaymentHistorycell.xib in Resources */,
 				A7086D911ED53402004CB3C5 /* IR.png in Resources */,
 				039D64801EA335E000E665A5 /* iconFollowing.png in Resources */,
 				A7086EA81ED53402004CB3C5 /* SE.png in Resources */,
@@ -5550,6 +5587,7 @@
 				A7CB07781EB87A5E000D8498 /* LoginForgotPasswordCell.swift in Sources */,
 				A76C824A1EFD002E00A10812 /* FeedbackTitleCell.swift in Sources */,
 				3034FA8B20644BCE00FF937E /* Constarints.swift in Sources */,
+				300624A3206789D30095AD03 /* PaymentHistoyViewController.swift in Sources */,
 				A7C4FD6F1EB1D444008511E1 /* GradientPoint.swift in Sources */,
 				3069B0A32062B62C0042EE77 /* CustomDatePicker.swift in Sources */,
 				A7C9C33E1ED83B200058E97C /* MapCell.swift in Sources */,
@@ -5575,6 +5613,7 @@
 				039D64921EA3556700E665A5 /* HomeCollectionVC.swift in Sources */,
 				A70186951F0206800073EA75 /* ReportHeaderCell.swift in Sources */,
 				A7EB97C41EBB33FA00CF6404 /* FunctionHelper.swift in Sources */,
+				3006249E2066B31D0095AD03 /* PointView.swift in Sources */,
 				A7C9C3361ED81B260058E97C /* PDDetailCell.swift in Sources */,
 				A7F066B81ECC433400D5F0C7 /* AddImageCollectionViewCell.swift in Sources */,
 				A7EB97C11EBB282200CF6404 /* TextBoxCell.swift in Sources */,
@@ -5659,6 +5698,7 @@
 				A76C824E1EFD090A00A10812 /* FeedbackChoiceCell.swift in Sources */,
 				A78755551ECEE990009F45E8 /* CategoriesPickerVC.swift in Sources */,
 				A70186921F02010E0073EA75 /* ReportUserVC.swift in Sources */,
+				300624A820678AD60095AD03 /* PaymentHistorycell.swift in Sources */,
 				A7262C3B1ED2D97C006ED97F /* CategoriesPickerCellLayout.swift in Sources */,
 				A7C509A11EE5560000939646 /* GroupNavigationContainerVC.swift in Sources */,
 				A716B0C61EF9312E0069A924 /* OwnerOfferCell.swift in Sources */,

@@ -36,6 +36,15 @@ class NavigationManager: NSObject {
         
     }
     
+    class func navigateToPaymentHistory(navigationController:UINavigationController?){
+        let storyboard = UIStoryboard(name: "PaymentHistory", bundle:  nil )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "PaymentHistoyViewController") as? PaymentHistoyViewController {
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+        
+    }
+    
+    
     func showTapBar(show:Bool) {
         var object:[String:Bool] = [String:Bool]()
         object["show"] = show
@@ -47,7 +56,7 @@ class NavigationManager: NSObject {
     
     class func moveToRoot(navigationController :UINavigationController?)  {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title:"AllRich", message: "Registeed Successfully!!", preferredStyle: .alert)
+            let alertController = UIAlertController(title:"AllRich", message: "Success!!", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
                 navigationController?.popToRootViewController(animated: true)
             }

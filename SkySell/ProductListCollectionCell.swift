@@ -31,6 +31,7 @@ class ProductListCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var viStatusBG: UIView!
     @IBOutlet weak var lbStatus: UILabel!
+    @IBOutlet weak var lblPoints: UILabel!
     
     
     
@@ -49,7 +50,7 @@ class ProductListCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        lblPoints.text = ""
         
         self.clipsToBounds = true
         self.layer.cornerRadius = 2

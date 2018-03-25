@@ -38,7 +38,8 @@ class RealmProductDataModel: Object {
     dynamic var model:String = ""
     dynamic var price:String = ""
     dynamic var price_server_Number:Double = 0
-    
+    dynamic var points:String = ""
+
     
     dynamic var product_description:String = ""
     dynamic var product_id:String = ""
@@ -165,7 +166,9 @@ class RealmProductDataModel: Object {
             if let image_src = product_img.object(forKey: "src") as? String{
                 self.image_src = image_src
             }
-            
+            if let points = product_img.object(forKey: "points") as? String{
+                self.points = points
+            }
             
         }
         

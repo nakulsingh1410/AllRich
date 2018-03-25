@@ -1276,6 +1276,13 @@ extension ProductListVC:UICollectionViewDataSource, UICollectionViewDelegate{
               
                 
                 cell.lbTitle.text = product.title
+                if product.points.count > 0{
+                    let strPoint =  Int(product.points) == 1 ? " Point" : " Points"
+                    cell.lblPoints.text = product.points + strPoint
+                }else{
+                    cell.lblPoints.text = ""
+                }
+                
                 cell.lbDetail.text = self.mySetting.priceWithString(strPricein: product.price)
                 
                 if(product.image_src.count > 5){

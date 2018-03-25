@@ -74,7 +74,8 @@ class ProductDataModel: NSObject {
     
     var year:String = ""
     var country:String = ""
-  
+    var points:String = ""
+
     var report_id:[String] = [String]()
     
     
@@ -431,24 +432,14 @@ class ProductDataModel: NSObject {
             }
             
         }
-        
- 
-        
         self.likeCount = myData.getLikToProduct(productID: self.product_id).count
-        
-        
         self.isLoading = false
-        
     }
     
     
     
     func getDictionary()->[String:Any]{
-        
-        
         var dicData:[String:Any] = [String:Any]()
-        
-        
         dicData["product_id"] = product_id
         dicData["product_id_number"] = product_id_number
         
@@ -456,10 +447,8 @@ class ProductDataModel: NSObject {
         coverImage["name"] = image_name
         coverImage["path"] = image_path
         coverImage["src"] = image_src
-        
         dicData["image"] = coverImage
-        
-        
+    
         var productImage:[[String:String]] = [[String:String]]()
         var arPIm:[String] = [String]()
         for item in self.images{
@@ -555,7 +544,8 @@ class ProductDataModel: NSObject {
         dicData["likes"] = arLike
         
         dicData["uid"] = uid
-        
+        dicData["points"] = points
+
         
         
     

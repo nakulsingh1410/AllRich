@@ -336,7 +336,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROJ-5i-pir">
-                                        <rect key="frame" x="302" y="0.0" width="65" height="44"/>
+                                        <rect key="frame" x="302" y="0.0" width="65" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="brd-Yv-vYs"/>
                                         </constraints>
@@ -373,18 +373,28 @@
                                             <constraint firstAttribute="bottom" secondItem="xuf-Ti-Nwt" secondAttribute="bottom" id="kpz-gl-2G7"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtH-4O-VtG" customClass="PointView" customModule="SkySell" customModuleProvider="target">
+                                        <rect key="frame" x="302" y="29" width="65" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="eea-bR-RSw"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.4549019608" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xtH-4O-VtG" secondAttribute="bottom" id="Fkp-cW-DhM"/>
                                     <constraint firstItem="KW1-DB-N5z" firstAttribute="leading" secondItem="0bm-pM-Zw8" secondAttribute="leading" constant="8" id="Jme-iC-Slu"/>
                                     <constraint firstItem="ODe-wX-GJv" firstAttribute="leading" secondItem="KW1-DB-N5z" secondAttribute="trailing" constant="8" id="Jxx-vW-gOo"/>
                                     <constraint firstAttribute="trailing" secondItem="ROJ-5i-pir" secondAttribute="trailing" constant="8" id="Rfq-Vs-Udc"/>
                                     <constraint firstItem="KW1-DB-N5z" firstAttribute="top" secondItem="0bm-pM-Zw8" secondAttribute="top" id="XJ0-2p-QNG"/>
                                     <constraint firstItem="ROJ-5i-pir" firstAttribute="leading" secondItem="ODe-wX-GJv" secondAttribute="trailing" constant="8" id="XhN-LB-rhS"/>
                                     <constraint firstAttribute="height" constant="47" id="Yrq-2y-FH1"/>
-                                    <constraint firstAttribute="bottom" secondItem="ROJ-5i-pir" secondAttribute="bottom" constant="3" id="ZuN-5x-L9q"/>
+                                    <constraint firstAttribute="bottom" secondItem="ROJ-5i-pir" secondAttribute="bottom" constant="10" id="ZuN-5x-L9q"/>
                                     <constraint firstItem="ODe-wX-GJv" firstAttribute="top" secondItem="0bm-pM-Zw8" secondAttribute="top" constant="8" id="cJC-cO-bk2"/>
+                                    <constraint firstItem="xtH-4O-VtG" firstAttribute="trailing" secondItem="ROJ-5i-pir" secondAttribute="trailing" id="g5I-Rd-Z2t"/>
                                     <constraint firstAttribute="bottom" secondItem="KW1-DB-N5z" secondAttribute="bottom" id="hNM-mf-C5d"/>
+                                    <constraint firstItem="xtH-4O-VtG" firstAttribute="leading" secondItem="ROJ-5i-pir" secondAttribute="leading" id="mbt-zT-lxS"/>
                                     <constraint firstItem="ROJ-5i-pir" firstAttribute="top" secondItem="0bm-pM-Zw8" secondAttribute="top" id="tCh-7g-oYA"/>
                                     <constraint firstAttribute="bottom" secondItem="ODe-wX-GJv" secondAttribute="bottom" constant="8" id="tyB-Fv-bci"/>
                                 </constraints>
@@ -450,7 +460,7 @@ There is nothing here yet.</string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhA-ky-05c">
-                                        <rect key="frame" x="302" y="0.0" width="65" height="44"/>
+                                        <rect key="frame" x="302" y="0.0" width="65" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="DDa-AW-OZ6"/>
                                         </constraints>
@@ -460,6 +470,13 @@ There is nothing here yet.</string>
                                             <action selector="tapOnLike:" destination="PUX-TR-3ei" eventType="touchUpInside" id="ZEE-xB-Ift"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-M3-yZU" customClass="PointView" customModule="SkySell" customModuleProvider="target">
+                                        <rect key="frame" x="302" y="29" width="65" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="YJW-ty-5IH"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdg-zs-hSY">
                                         <rect key="frame" x="8" y="0.0" width="47" height="47"/>
                                         <constraints>
@@ -474,6 +491,7 @@ There is nothing here yet.</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4tA-M3-yZU" secondAttribute="bottom" id="1zc-i8-gQh"/>
                                     <constraint firstAttribute="bottom" secondItem="SOm-HM-ec1" secondAttribute="bottom" id="ElX-yZ-dy1"/>
                                     <constraint firstItem="SOm-HM-ec1" firstAttribute="leading" secondItem="j4H-yo-Bqw" secondAttribute="leading" id="K3l-xy-eyG"/>
                                     <constraint firstItem="Mdg-zs-hSY" firstAttribute="centerY" secondItem="j4H-yo-Bqw" secondAttribute="centerY" id="QIS-Gl-aek"/>
@@ -482,7 +500,9 @@ There is nothing here yet.</string>
                                     <constraint firstItem="Mdg-zs-hSY" firstAttribute="leading" secondItem="j4H-yo-Bqw" secondAttribute="leading" constant="8" id="i5Y-24-ZIZ"/>
                                     <constraint firstAttribute="height" constant="47" id="lcB-V9-nSW"/>
                                     <constraint firstAttribute="trailing" secondItem="SOm-HM-ec1" secondAttribute="trailing" id="mgw-Sm-zN7"/>
-                                    <constraint firstAttribute="bottom" secondItem="yhA-ky-05c" secondAttribute="bottom" constant="3" id="ulu-hT-jnm"/>
+                                    <constraint firstItem="4tA-M3-yZU" firstAttribute="leading" secondItem="yhA-ky-05c" secondAttribute="leading" id="rRe-2t-efU"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhA-ky-05c" secondAttribute="bottom" constant="10" id="ulu-hT-jnm"/>
+                                    <constraint firstItem="4tA-M3-yZU" firstAttribute="trailing" secondItem="yhA-ky-05c" secondAttribute="trailing" id="yp4-K5-p0O"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhj-nC-wPx">
@@ -2059,16 +2079,23 @@ There is nothing here yet.</string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiV-hY-6S6">
-                                        <rect key="frame" x="302" y="0.0" width="65" height="44"/>
+                                        <rect key="frame" x="297" y="0.0" width="70" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="0Ge-YA-Q7u"/>
-                                            <constraint firstAttribute="width" constant="65" id="3SA-ao-MOV"/>
+                                            <constraint firstAttribute="height" constant="34" id="0Ge-YA-Q7u"/>
+                                            <constraint firstAttribute="width" constant="70" id="3SA-ao-MOV"/>
                                         </constraints>
                                         <state key="normal" image="iconOther.png"/>
                                         <connections>
                                             <action selector="tapFavorite:" destination="Pae-tj-5gU" eventType="touchUpInside" id="0nM-lY-NqF"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahZ-gt-NLK" customClass="PointView" customModule="SkySell" customModuleProvider="target">
+                                        <rect key="frame" x="297" y="29" width="70" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="q34-Zu-zX4"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-Me-ffK">
                                         <rect key="frame" x="8" y="0.0" width="47" height="47"/>
                                         <constraints>
@@ -2083,6 +2110,7 @@ There is nothing here yet.</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.4549019608" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="ahZ-gt-NLK" firstAttribute="trailing" secondItem="EiV-hY-6S6" secondAttribute="trailing" id="0Bk-oN-RAi"/>
                                     <constraint firstItem="lLa-Me-ffK" firstAttribute="centerY" secondItem="PgR-vf-cLr" secondAttribute="centerY" id="1Sb-mT-aJF"/>
                                     <constraint firstItem="lLa-Me-ffK" firstAttribute="leading" secondItem="PgR-vf-cLr" secondAttribute="leading" constant="8" id="DBN-ec-iAA"/>
                                     <constraint firstAttribute="trailing" secondItem="EiV-hY-6S6" secondAttribute="trailing" constant="8" id="Dog-bF-C8B"/>
@@ -2091,6 +2119,8 @@ There is nothing here yet.</string>
                                     <constraint firstAttribute="height" constant="47" id="kY8-xH-tkp"/>
                                     <constraint firstItem="EiV-hY-6S6" firstAttribute="top" secondItem="PgR-vf-cLr" secondAttribute="top" id="mP6-W9-5OV"/>
                                     <constraint firstAttribute="trailing" secondItem="odP-OR-1c5" secondAttribute="trailing" id="nvK-Ai-NE7"/>
+                                    <constraint firstItem="ahZ-gt-NLK" firstAttribute="leading" secondItem="EiV-hY-6S6" secondAttribute="leading" id="rag-Qm-e8w"/>
+                                    <constraint firstAttribute="bottom" secondItem="ahZ-gt-NLK" secondAttribute="bottom" id="uIZ-P8-9ZM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2387,13 +2417,13 @@ There is nothing here yet.</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMs-G5-hsX">
-                                        <rect key="frame" x="156.5" y="13" width="62.5" height="22"/>
+                                        <rect key="frame" x="156" y="13" width="63" height="22"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS9-1n-gSp">
-                                        <rect key="frame" x="8" y="0.5" width="47" height="47"/>
+                                        <rect key="frame" x="8" y="0.0" width="47" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="3T2-jN-ZmW"/>
                                             <constraint firstAttribute="width" constant="47" id="Ash-ag-5aR"/>
@@ -2404,6 +2434,14 @@ There is nothing here yet.</string>
                                             <action selector="tapOnClose:" destination="ni8-NH-UkN" eventType="touchUpInside" id="F6q-EC-u5u"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOd-fP-hNq" customClass="PointView" customModule="SkySell" customModuleProvider="target">
+                                        <rect key="frame" x="297" y="15" width="70" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="Hor-N5-Bkx"/>
+                                            <constraint firstAttribute="width" constant="70" id="XrF-Ou-BQ3"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.4549019608" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2413,8 +2451,10 @@ There is nothing here yet.</string>
                                     <constraint firstItem="NMs-G5-hsX" firstAttribute="centerY" secondItem="3Ck-dF-n5D" secondAttribute="centerY" id="ByI-eo-We3"/>
                                     <constraint firstItem="tS9-1n-gSp" firstAttribute="leading" secondItem="3Ck-dF-n5D" secondAttribute="leading" constant="8" id="IGx-Uf-5Yc"/>
                                     <constraint firstAttribute="height" constant="47" id="RqM-iN-v2q"/>
+                                    <constraint firstItem="SOd-fP-hNq" firstAttribute="centerY" secondItem="NMs-G5-hsX" secondAttribute="centerY" id="VST-7W-B8h"/>
                                     <constraint firstItem="Cb4-g0-HDe" firstAttribute="leading" secondItem="3Ck-dF-n5D" secondAttribute="leading" id="fZy-hM-mvh"/>
                                     <constraint firstItem="NMs-G5-hsX" firstAttribute="centerX" secondItem="3Ck-dF-n5D" secondAttribute="centerX" id="yP9-7H-yWg"/>
+                                    <constraint firstAttribute="trailing" secondItem="SOd-fP-hNq" secondAttribute="trailing" constant="8" id="yr0-pe-Q7z"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2467,7 +2507,7 @@ There is nothing here yet.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waV-mU-tfD">
-                                        <rect key="frame" x="302" y="0.0" width="65" height="44"/>
+                                        <rect key="frame" x="302" y="0.0" width="65" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="sZO-CY-7bR"/>
                                         </constraints>
@@ -2506,16 +2546,26 @@ There is nothing here yet.</string>
                                             <constraint firstAttribute="trailing" secondItem="n0e-Wr-zlo" secondAttribute="trailing" constant="8" id="z9e-7v-2dd"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-0q-iut" customClass="PointView" customModule="SkySell" customModuleProvider="target">
+                                        <rect key="frame" x="302" y="27" width="65" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="T4o-xt-yPc"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.4549019608" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Oe-0q-iut" secondAttribute="trailing" constant="8" id="2QU-Dc-nQh"/>
                                     <constraint firstItem="D8G-dd-XLJ" firstAttribute="top" secondItem="264-sg-3dH" secondAttribute="top" id="Dp7-8X-4gz"/>
                                     <constraint firstAttribute="height" constant="47" id="ILC-HY-59Q"/>
                                     <constraint firstItem="waV-mU-tfD" firstAttribute="leading" secondItem="c88-5O-ypx" secondAttribute="trailing" constant="8" id="J4a-BE-zFV"/>
-                                    <constraint firstAttribute="bottom" secondItem="waV-mU-tfD" secondAttribute="bottom" constant="3" id="Wru-zs-0cb"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Oe-0q-iut" secondAttribute="bottom" constant="2" id="Qk5-gz-GnM"/>
+                                    <constraint firstAttribute="bottom" secondItem="waV-mU-tfD" secondAttribute="bottom" constant="10" id="Wru-zs-0cb"/>
                                     <constraint firstItem="c88-5O-ypx" firstAttribute="leading" secondItem="D8G-dd-XLJ" secondAttribute="trailing" constant="8" id="dGT-Kl-Dpw"/>
                                     <constraint firstItem="waV-mU-tfD" firstAttribute="top" secondItem="264-sg-3dH" secondAttribute="top" id="eTi-mp-AAg"/>
                                     <constraint firstAttribute="bottom" secondItem="c88-5O-ypx" secondAttribute="bottom" constant="8" id="gr7-WM-yLl"/>
+                                    <constraint firstItem="5Oe-0q-iut" firstAttribute="leading" secondItem="waV-mU-tfD" secondAttribute="leading" id="keC-VH-L62"/>
                                     <constraint firstAttribute="bottom" secondItem="D8G-dd-XLJ" secondAttribute="bottom" id="mO6-Tq-wWo"/>
                                     <constraint firstItem="D8G-dd-XLJ" firstAttribute="leading" secondItem="264-sg-3dH" secondAttribute="leading" constant="8" id="nDV-F5-2FM"/>
                                     <constraint firstAttribute="trailing" secondItem="waV-mU-tfD" secondAttribute="trailing" constant="8" id="wFF-Bl-Aii"/>
@@ -2552,7 +2602,7 @@ There is nothing here yet.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttj-EC-HTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="-531.18440779610194"/>
+            <point key="canvasLocation" x="1971.5" y="-531.5"/>
         </scene>
         <!--Home Navigation ContainerVC-->
         <scene sceneID="ghl-z6-WNa">

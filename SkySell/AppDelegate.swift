@@ -25,8 +25,8 @@ import Stripe
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var point:Int = 0
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //pk_test_6pRNASCoBOKtIshFeQd4XMUh

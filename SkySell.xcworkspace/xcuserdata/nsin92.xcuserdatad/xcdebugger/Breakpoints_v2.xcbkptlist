@@ -25,8 +25,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "692"
             endingLineNumber = "692"
-            landmarkName = "getUserDatainfo()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,8 +41,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "726"
             endingLineNumber = "726"
-            landmarkName = "finishLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,8 +57,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "620"
             endingLineNumber = "620"
-            landmarkName = "postUserInfoToServer()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -68,11 +68,11 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563208.6654691"
+                  timestampString = "543657658.990274"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "653"
-                  endingLineNumber = "653"
+                  startingLineNumber = "621"
+                  endingLineNumber = "621"
                   offsetFromSymbolStart = "14">
                </Location>
                <Location
@@ -83,11 +83,11 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563208.6676511"
+                  timestampString = "543657658.9927059"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "655"
-                  endingLineNumber = "655"
+                  startingLineNumber = "623"
+                  endingLineNumber = "623"
                   offsetFromSymbolStart = "51">
                </Location>
             </Locations>
@@ -105,8 +105,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "628"
             endingLineNumber = "628"
-            landmarkName = "postUserInfoToServer()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -121,8 +121,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "332"
             endingLineNumber = "332"
-            landmarkName = "loginWithEmail()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -137,8 +137,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "424"
             endingLineNumber = "424"
-            landmarkName = "facebookLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/AppDelegate.swift"
-            timestampString = "543564016.0457"
+            timestampString = "543657819.220678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,8 +169,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "432"
             endingLineNumber = "432"
-            landmarkName = "facebookLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -185,8 +185,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "472"
             endingLineNumber = "472"
-            landmarkName = "facebookLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,8 +201,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "475"
             endingLineNumber = "475"
-            landmarkName = "facebookLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -217,8 +217,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "473"
             endingLineNumber = "473"
-            landmarkName = "facebookLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -228,7 +228,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563208.692727"
+                  timestampString = "543657659.020321"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "474"
@@ -243,7 +243,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563208.695349"
+                  timestampString = "543657659.023429"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "475"
@@ -265,8 +265,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "666"
             endingLineNumber = "666"
-            landmarkName = "postUserInfoToServer()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -276,11 +276,11 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563302.453828"
+                  timestampString = "543657659.0294991"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "698"
-                  endingLineNumber = "698"
+                  startingLineNumber = "666"
+                  endingLineNumber = "666"
                   offsetFromSymbolStart = "90">
                </Location>
                <Location
@@ -291,11 +291,11 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "543563302.456167"
+                  timestampString = "543657659.032066"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "700"
-                  endingLineNumber = "700"
+                  startingLineNumber = "668"
+                  endingLineNumber = "668"
                   offsetFromSymbolStart = "21">
                </Location>
             </Locations>
@@ -313,8 +313,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "665"
             endingLineNumber = "665"
-            landmarkName = "postUserInfoToServer()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -329,7 +329,247 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "679"
             endingLineNumber = "679"
-            landmarkName = "postUserInfoToServer()"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ViewController.swift"
+            timestampString = "543657819.220932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
+            landmarkName = "btnUpgradePlanTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ViewController.swift"
+            timestampString = "543657819.2210079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "616"
+            endingLineNumber = "616"
+            landmarkName = "openCamera()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ViewController.swift"
+            timestampString = "543657819.2210701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
+            landmarkName = "openCamera()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.221137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
+            landmarkName = "tapSubmit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.2215689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "tapSubmit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.221881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1154"
+            endingLineNumber = "1154"
+            landmarkName = "checkComplete(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.2221971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "tapSubmit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.222482"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "527"
+            endingLineNumber = "527"
+            landmarkName = "tapOnMarkAsSoldOut(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PostSellVC.swift"
+            timestampString = "543657819.2227629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "720"
+            endingLineNumber = "720"
+            landmarkName = "startUploadProductData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "543657819.223055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getUserPoints(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ShareData.swift"
+            timestampString = "543644394.234064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "833"
+            endingLineNumber = "833"
+            landmarkName = "loadAllProduct(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ShareData.swift"
+            timestampString = "543644394.2343121"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "832"
+            endingLineNumber = "832"
+            landmarkName = "loadAllProduct(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/ViewController.swift"
+            timestampString = "543657819.223441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "832"
+            endingLineNumber = "832"
+            landmarkName = "getUserPoints()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/PointView/PointView.swift"
+            timestampString = "543657819.2235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "setPoints()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "543657819.22355"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getPaymentHistory(callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
