@@ -668,7 +668,8 @@ class ProductListVC: UIViewController {
                 newP.updated_at_Date = pro.updated_at_Date
                 newP.year = pro.year
                 newP.country = pro.country
-                
+                newP.points = pro.points
+
                 
                 
                 
@@ -1280,7 +1281,7 @@ extension ProductListVC:UICollectionViewDataSource, UICollectionViewDelegate{
                     let strPoint =  Int(product.points) == 1 ? " Point" : " Points"
                     cell.lblPoints.text = product.points + strPoint
                 }else{
-                    cell.lblPoints.text = ""
+                    cell.lblPoints.text = "0 Point"
                 }
                 
                 cell.lbDetail.text = self.mySetting.priceWithString(strPricein: product.price)

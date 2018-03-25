@@ -33,17 +33,32 @@ class PaymentHistorycell: UITableViewCell {
         lblPayment.text = ""
         lblPaymentDate.text = ""
         
-        if let string = dict["charge.balance_transaction"] as? String{
-            lbltransactionNo.text = string
-        }
         if let string = dict["paymentType"] as? String{
-            lblPaymentType.text = string
+            lblPaymentType.text = string.uppercased()
         }
-        if let string = dict["amount"] as? Int{
-            lblPayment.text = "SGD \(string)"
+        if let string = dict["amount"] as? String{
+            lblPayment.text = "SGD $ \(string)"
         }
-        if let string = dict["charge.balance_transaction"] as? String{
-            lblPaymentDate.text = string
+        
+        if let dictObj = dict["charge"] as? [String:Any] {
+            if let string = dictObj["balance_transaction"] as? String{
+                lbltransactionNo.text = string
+            }
+            if let timeStamp = dictObj["created"] as? Int{
+                lblPaymentDate.text = getDateString(unixtimeInterval:timeStamp )
+            }
+            
         }
+    }
+    
+    
+    func getDateString(unixtimeInterval:Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "dd-MM-yyyy" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        return strDate
     }
 }

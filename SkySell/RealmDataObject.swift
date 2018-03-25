@@ -489,7 +489,8 @@ class RealmProductDataModel: Object {
  
         
         dicData["uid"] = uid
-        
+        dicData["points"] = points
+
         
         
         

@@ -12,7 +12,6 @@ class WebServiceModel: NSObject {
 
     /*************************************************************/
     class func isPremiunMember(callback:@escaping (Bool)-> Void) {
-
             //Global.showHud()
             let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
             let parameters = ["userId":uid]
@@ -39,18 +38,15 @@ class WebServiceModel: NSObject {
                                     callback(true)
                                 }else {
                                     callback(false)
-
                                 }
                             }else{
                                 callback(false)
                             }
                         }
-                        
                     } catch {
                         print(error)
                     }
                 }
-                
                 }.resume()
         
     }
@@ -58,8 +54,7 @@ class WebServiceModel: NSObject {
     
     /*************************************************************/
     class func getUserPoints(callback:@escaping (Int?)-> Void) {
-        
-        Global.showHud()
+        //Global.showHud()
         let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
         let parameters = ["userId":uid]
         
@@ -86,19 +81,16 @@ class WebServiceModel: NSObject {
                             callback(nil)
                         }
                     }
-                    
                 } catch {
                     print(error)
                 }
             }
-            
             }.resume()
         
     }
     /*************************************************************/
     /*************************************************************/
     class func getPaymentHistory(callback:@escaping ( [[String:Any]]?)-> Void) {
-        
         Global.showHud()
         let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
         let parameters = ["userId":uid]
@@ -120,8 +112,8 @@ class WebServiceModel: NSObject {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
                         print(json)
-                        if  let data = json["data"] as? [[String:Any]] {
-                            callback(data)
+                        if  let dataDict = json["data"] as? [String:Any] {
+                            callback(WebServiceModel.getArrayFromDictionary(dictionary: dataDict))
                         }else{
                             callback(nil)
                         }
@@ -133,8 +125,18 @@ class WebServiceModel: NSObject {
             }
             
             }.resume()
-        
     }
+    
+   class func getArrayFromDictionary(dictionary:[String:Any]) -> [[String:Any]]{
+        var arrayDictionay = [[String:Any]]()
+        for (key,_) in dictionary {
+            if let newDictionary = dictionary[key] as? [String:Any]{
+                arrayDictionay.append(newDictionary)
+            }
+        }
+        return arrayDictionay
+    }
+    
     /*************************************************************/
     
     

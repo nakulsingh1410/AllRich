@@ -128,7 +128,7 @@ class ViewController: UIViewController {
                             self.myData.userInfo = nil
                             self.myData.saveUserInfo(UID: "")
                             self.removeActivityView {
-                                let alertController = UIAlertController(title: "Account Banned", message: "Your user account has been banned from MyBankNotes.\nPlease contact administrator for infomation.", preferredStyle: .alert)
+                                let alertController = UIAlertController(title: "Account Banned", message: "Your user account has been banned from Allrich.\nPlease contact administrator for infomation.", preferredStyle: .alert)
                                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
                                     //LoginVC
                                     if let con = self.myHomeContainer{
