@@ -18,7 +18,7 @@ class ReferAndEarnViewController: UIViewController {
         
         btnShare.layer.cornerRadius = 3.0
         btnShare.clipsToBounds = true
-        
+        loadinviteCode()
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,9 +26,9 @@ class ReferAndEarnViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   private  func loadinviteCode()  {
-    lblInviteCode.text =  ShareData.sharedInstance.loadSaveUserReferKey()
-    
+    private  func loadinviteCode()  {
+        lblInviteCode.text =  ShareData.sharedInstance.userInfo.userReferKey
+        
     }
     
     

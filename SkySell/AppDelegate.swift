@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var point:Int = 0
+    var isPremiumMember = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -250,5 +251,24 @@ extension AppDelegate: UNUserNotificationCenterDelegate, FIRMessagingDelegate {
 }
 
 
-
-
+// MARK: API Calling
+extension AppDelegate{
+    
+    func checkUserPremium()  {
+        WebServiceModel.isPremiunMember { (isPremium) in
+            DispatchQueue.main.async {
+                self.isPremiumMember = isPremium
+            }
+        }
+    }
+    
+    func getUserPoints()  {
+        WebServiceModel.getUserPoints { (points) in
+            if let points = points {
+                self.point = points
+                NotificationCenter.default.post(name: Notification.Name(setPointNotificatio), object: nil)
+            }
+        }
+    }
+    
+}

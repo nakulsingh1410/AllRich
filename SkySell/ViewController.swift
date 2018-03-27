@@ -93,7 +93,7 @@ class ViewController: UIViewController {
          self.view.addSubview(myActivityView)
          }*/
         self.view.bringSubview(toFront: self.viMask)
-        checkUserPremium()
+        
     }
 
     deinit {
@@ -156,7 +156,12 @@ class ViewController: UIViewController {
             }
         }
         
-        getUserPoints()
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         appDelegate.getUserPoints()
+        checkUserPremium(isDollerButtonTapped: false, isCameraTapped: false)
     }
 
     func afterLogin() {
@@ -539,7 +544,7 @@ class ViewController: UIViewController {
                  showActionSheetForFreeMember()
             }
         }else{
-            checkUserPremium()
+            checkUserPremium(isDollerButtonTapped: true, isCameraTapped: false)
         }
     }
     
@@ -605,7 +610,7 @@ class ViewController: UIViewController {
                showActionSheetForFreeMember()
             }
         }else{
-            checkUserPremium()
+            checkUserPremium(isDollerButtonTapped: false, isCameraTapped:true)
             
         }
     }
@@ -822,24 +827,19 @@ extension ViewController{
 
 //MARK: API
 extension ViewController {
-    func checkUserPremium()  {
+    func checkUserPremium(isDollerButtonTapped:Bool,isCameraTapped:Bool)  {
         WebServiceModel.isPremiunMember { (isPremium) in
-            self.isMemberPremium = isPremium
-        }
-    }
-    func getUserPoints()  {
-        WebServiceModel.getUserPoints { (points) in
-            if let points = points {
-                appDelegate.point = points
-                NotificationCenter.default.post(name: Notification.Name(setPointNotificatio), object: nil)
+              DispatchQueue.main.async {
+                self.isMemberPremium = isPremium
+                if isDollerButtonTapped{
+                    self.btnUpgradePlanTapped(UIButton())
+                }
+                if isCameraTapped{
+                    self.tapOnCamera(UIButton())
+                }
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 

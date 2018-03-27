@@ -14,9 +14,12 @@ class WebServiceModel: NSObject {
     class func isPremiunMember(callback:@escaping (Bool)-> Void) {
             //Global.showHud()
             let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
+        
+            if uid.count < 1 {return}
             let parameters = ["userId":uid]
             
             guard let url = URL(string: "https://us-central1-newmybanknotes.cloudfunctions.net/isPremiunMember") else { return }
+        
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -27,7 +30,7 @@ class WebServiceModel: NSObject {
             session.dataTask(with: request) { (data, response, error) in
                 Global.hideHud()
                 if let response = response {
-                    print(response)
+                    print("Params =\(parameters)\n \(response.url)")
                 }
                 if let data = data {
                     do {
@@ -56,6 +59,7 @@ class WebServiceModel: NSObject {
     class func getUserPoints(callback:@escaping (Int?)-> Void) {
         //Global.showHud()
         let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
+        if uid.count < 1 {return}
         let parameters = ["userId":uid]
         
         guard let url = URL(string: "https://us-central1-newmybanknotes.cloudfunctions.net/getUserPoints") else { return }

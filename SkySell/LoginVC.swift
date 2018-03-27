@@ -700,6 +700,7 @@ class LoginVC: UIViewController {
                 self.myData.saveUserInfo(UID: self.myData.userInfo.uid)
                 self.myData.saveUserReferKey(UserReferKey: self.myData.userInfo.userReferKey)
                 //print(self.myData.userInfo.first_name)
+                appDelegate.checkUserPremium()
             }
 
             if(SettingData.sharedInstance.haveConnect == false){
@@ -737,17 +738,23 @@ class LoginVC: UIViewController {
         }else{
             let setting:SettingData = SettingData()
             setting.startConnect()
-            if(self.myData.userInfo != nil){
-                FIRMessaging.messaging().subscribe(toTopic: self.myData.userInfo.uid)
-            }
             self.removeActivityView {
-                let alertController = UIAlertController(title: "SUCCESS!!", message: nil, preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
-                    //self.navigationController?.popViewController(animated: true)
-                    self.gotoUserMainScene()
+                DispatchQueue.main.async {
+                    if(self.myData.userInfo != nil){
+                        self.myData.saveUserInfo(UID: self.myData.userInfo.uid)
+                        self.myData.saveUserReferKey(UserReferKey: self.myData.userInfo.userReferKey)
+                        FIRMessaging.messaging().subscribe(toTopic: self.myData.userInfo.uid)
+                        appDelegate.checkUserPremium()
+                        appDelegate.getUserPoints()
+                    }
+                    let alertController = UIAlertController(title: "SUCCESS!!", message: nil, preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                        //self.navigationController?.popViewController(animated: true)
+                        self.gotoUserMainScene()
+                    }
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                alertController.addAction(cancelAction)
-                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
