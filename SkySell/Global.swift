@@ -25,6 +25,16 @@ class Global: NSObject {
         }
     }
     
+    class func showAlertOnController(viewController :UIViewController,message:String)  {
+        DispatchQueue.main.async {
+            
+            let alertController = UIAlertController(title: "AllRich", message: message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+            }
+            alertController.addAction(cancelAction)
+            viewController.present(alertController, animated: true, completion: nil)
+        }
+    }
     //MARK:- Show HUD
     //    MARK:- HUD
     static func showHud(_ title: String = "Loading...") {
@@ -58,7 +68,18 @@ class Global: NSObject {
         }
     }
     
-    
+    class func EmptyMessage(message:String, viewController:UIViewController,tableView:UITableView) {
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: viewController.view.bounds.size.width, height: viewController.view.bounds.size.height))
+        let messageLabel = UILabel(frame: rect)
+        messageLabel.text = message
+        messageLabel.textColor = UIColor.black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+//        messageLabel.font = Font.gillSansRegular(size: 17)
+        messageLabel.sizeToFit()
+        tableView.backgroundView = messageLabel;
+        tableView.separatorStyle = .none;
+    }
 }
 
 extension UIApplication {

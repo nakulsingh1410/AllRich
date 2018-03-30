@@ -53,6 +53,14 @@ class NavigationManager: NSObject {
         
     }
     
+    class func navigateToFriendequest(navigationController:UINavigationController?){
+        let storyboard = UIStoryboard(name: "FriendRequest", bundle:  nil )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "FriendRequestViewController") as? FriendRequestViewController {
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+        
+    }
+    
     
     class func moveToRoot(navigationController :UINavigationController?)  {
         DispatchQueue.main.async {

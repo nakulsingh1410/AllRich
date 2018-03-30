@@ -93,6 +93,10 @@
 		3069B0AF2062B9700042EE77 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3069B0AB2062B96F0042EE77 /* README.md */; };
 		3069B0B12062B98B0042EE77 /* CardExpiryPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3069B0B02062B98B0042EE77 /* CardExpiryPickerView.xib */; };
 		3069B0B32062B9E90042EE77 /* CardExpiryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B0B22062B9E90042EE77 /* CardExpiryPickerView.swift */; };
+		30950F4B206E10C7009FAD13 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30950F4A206E10C7009FAD13 /* FriendRequestViewController.swift */; };
+		30950F4E206E2626009FAD13 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30950F4C206E2626009FAD13 /* FriendListCell.swift */; };
+		30950F4F206E2626009FAD13 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30950F4D206E2626009FAD13 /* FriendListCell.xib */; };
+		30950F51206E4A61009FAD13 /* FriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30950F50206E4A61009FAD13 /* FriendListModel.swift */; };
 		93CFA53E54F3FD970C9208EE /* Pods_SkySell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE9015F383D8352D47B850 /* Pods_SkySell.framework */; };
 		A70186921F02010E0073EA75 /* ReportUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70186911F02010E0073EA75 /* ReportUserVC.swift */; };
 		A70186951F0206800073EA75 /* ReportHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70186931F0206800073EA75 /* ReportHeaderCell.swift */; };
@@ -1389,6 +1393,10 @@
 		3069B0AB2062B96F0042EE77 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3069B0B02062B98B0042EE77 /* CardExpiryPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardExpiryPickerView.xib; sourceTree = "<group>"; };
 		3069B0B22062B9E90042EE77 /* CardExpiryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpiryPickerView.swift; sourceTree = "<group>"; };
+		30950F4A206E10C7009FAD13 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
+		30950F4C206E2626009FAD13 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
+		30950F4D206E2626009FAD13 /* FriendListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListCell.xib; sourceTree = "<group>"; };
+		30950F50206E4A61009FAD13 /* FriendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListModel.swift; sourceTree = "<group>"; };
 		4932F6D42CCBBB63BAEF55CD /* Pods-SkySell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkySell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkySell/Pods-SkySell.release.xcconfig"; sourceTree = "<group>"; };
 		55FE9015F383D8352D47B850 /* Pods_SkySell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkySell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E54D85E0663D245A513A241 /* Pods-SkySell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkySell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkySell/Pods-SkySell.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2764,6 +2772,17 @@
 			path = MonthYearPickerView;
 			sourceTree = "<group>";
 		};
+		30950F47206E10A6009FAD13 /* FriendRequest */ = {
+			isa = PBXGroup;
+			children = (
+				30950F4A206E10C7009FAD13 /* FriendRequestViewController.swift */,
+				30950F4C206E2626009FAD13 /* FriendListCell.swift */,
+				30950F4D206E2626009FAD13 /* FriendListCell.xib */,
+				30950F50206E4A61009FAD13 /* FriendListModel.swift */,
+			);
+			path = FriendRequest;
+			sourceTree = "<group>";
+		};
 		5C7D401B9CD49640DE373F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3734,6 +3753,7 @@
 		A79F775C1E9DD2AC007EF9B8 /* SkySell */ = {
 			isa = PBXGroup;
 			children = (
+				30950F47206E10A6009FAD13 /* FriendRequest */,
 				300624A1206789BD0095AD03 /* PaymentHistory */,
 				3006249C2066B30C0095AD03 /* PointView */,
 				30002A40206555D000E35556 /* Refer&Earn */,
@@ -4819,6 +4839,7 @@
 				A7086E9A1ED53402004CB3C5 /* SC@2x.png in Resources */,
 				A7086E641ED53402004CB3C5 /* PK@2x.png in Resources */,
 				A7086F1E1ED53402004CB3C5 /* UY@2x.png in Resources */,
+				30950F4F206E2626009FAD13 /* FriendListCell.xib in Resources */,
 				039D647A1EA335E000E665A5 /* iconBuy.png in Resources */,
 				A7086F371ED53402004CB3C5 /* VU@3x.png in Resources */,
 				A7086F061ED53402004CB3C5 /* TV@2x.png in Resources */,
@@ -5489,7 +5510,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -5500,7 +5523,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -5609,6 +5634,7 @@
 				A7EB97B31EBB081A00CF6404 /* EmptyCell.swift in Sources */,
 				A7C509A51EE55B0100939646 /* GroupCollectVC.swift in Sources */,
 				A779AD651F025E6900D2C003 /* MyLikesVC.swift in Sources */,
+				30950F51206E4A61009FAD13 /* FriendListModel.swift in Sources */,
 				A7D61E6D1EE8146D004E1BD5 /* RealmMessageDataObject.swift in Sources */,
 				039D64921EA3556700E665A5 /* HomeCollectionVC.swift in Sources */,
 				A70186951F0206800073EA75 /* ReportHeaderCell.swift in Sources */,
@@ -5616,6 +5642,7 @@
 				3006249E2066B31D0095AD03 /* PointView.swift in Sources */,
 				A7C9C3361ED81B260058E97C /* PDDetailCell.swift in Sources */,
 				A7F066B81ECC433400D5F0C7 /* AddImageCollectionViewCell.swift in Sources */,
+				30950F4E206E2626009FAD13 /* FriendListCell.swift in Sources */,
 				A7EB97C11EBB282200CF6404 /* TextBoxCell.swift in Sources */,
 				031D41211EA4C40B00CDD8FB /* ProductListLayout.swift in Sources */,
 				3034FA8820644B9900FF937E /* HudView.swift in Sources */,
@@ -5680,6 +5707,7 @@
 				A7EB97A91EBADD3D00CF6404 /* CreateUserImageCell.swift in Sources */,
 				A7E6DAC11ECDA342005A9B39 /* ImagePreviewVC.swift in Sources */,
 				A7D61E6A1EE80B13004E1BD5 /* ChatDateTitleCell.swift in Sources */,
+				30950F4B206E10C7009FAD13 /* FriendRequestViewController.swift in Sources */,
 				038AA9A71ECDFB1900071432 /* PostTextViewButtonCell.swift in Sources */,
 				A7C9C33A1ED828FA0058E97C /* MeetTheSellerCell.swift in Sources */,
 				039D64901EA354F500E665A5 /* HomeNavigationContainerVC.swift in Sources */,

@@ -18,4 +18,8 @@ target 'SkySell' do
 
     pod 'RealmSwift'
     pod 'Stripe'
+    
+    pod 'ObjectMapper’, ‘2.2.8’
+    pod 'Kingfisher’,’~>4.0.1’
+
 end

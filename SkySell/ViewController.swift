@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btProfile: UIButton!
     @IBOutlet weak var btCamera: UIButton!
     @IBOutlet weak var viMenuBarBG_Layout_Buttom: NSLayoutConstraint!
-    
+    @IBOutlet weak var btFriendRequest: UIButton!
+
    // @IBOutlet weak var btCamera_Layout_Buttom: NSLayoutConstraint!
     var screenSize:CGRect = UIScreen.main.bounds
     var myActivityView:ActivityLoadingView! = nil
@@ -548,6 +549,25 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func btnFriendRequestTapped(_ sender: Any) {
+        
+        if(self.myData.userInfo != nil){
+            if let con = self.myHomeContainer{
+                con.swapToview(identifier: HomeContainerVC.SegName.toFriendRequest)
+                
+                self.lastMode = HomeContainerVC.SegName.toFriendRequest
+                self.thisUserForCheckInProductDetail = HomeContainerVC.SegName.toFriendRequest
+            }
+        }else{
+            if let con = self.myHomeContainer{
+                //con.swapToview(identifier: HomeContainerVC.SegName.toProfile)
+                con.swapToview(identifier: HomeContainerVC.SegName.segToNavigationProfileVC)
+                self.thisUserForCheckInProductDetail = HomeContainerVC.SegName.toProfile
+                // self.lastMode = HomeContainerVC.SegName.segToNavigationProfileVC.rawValue
+            }
+        }
+    }
+    
     
     @IBAction func tapOnHome(_ sender: UIButton) {
      if let con = self.myHomeContainer{
@@ -725,7 +745,8 @@ extension ViewController:HomeContainerDelegate{
             self.btGroup.setImage(UIImage(named: "iconGroupNonactive.png"), for: UIControlState.normal)
             self.btMessage.setImage(UIImage(named: "iconChat.png"), for: UIControlState.normal)
             self.btProfile.setImage(UIImage(named: "iconProfileNonactive.png"), for: UIControlState.normal)
-            
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend"), for: UIControlState.normal)
+
             break
         case .toGroup:
             
@@ -733,7 +754,8 @@ extension ViewController:HomeContainerDelegate{
             self.btGroup.setImage(UIImage(named: "iconGroupActive.png"), for: UIControlState.normal)
             self.btMessage.setImage(UIImage(named: "iconChat.png"), for: UIControlState.normal)
             self.btProfile.setImage(UIImage(named: "iconProfileNonactive.png"), for: UIControlState.normal)
-        
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend"), for: UIControlState.normal)
+
             break
         case .toMessage:
             
@@ -741,7 +763,8 @@ extension ViewController:HomeContainerDelegate{
             self.btGroup.setImage(UIImage(named: "iconGroupNonactive.png"), for: UIControlState.normal)
             self.btMessage.setImage(UIImage(named: "iconInboxActive.png"), for: UIControlState.normal)
             self.btProfile.setImage(UIImage(named: "iconProfileNonactive.png"), for: UIControlState.normal)
-            
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend"), for: UIControlState.normal)
+
             break
         case .toProfile:
             
@@ -749,7 +772,8 @@ extension ViewController:HomeContainerDelegate{
             self.btGroup.setImage(UIImage(named: "iconGroupNonactive.png"), for: UIControlState.normal)
             self.btMessage.setImage(UIImage(named: "iconChat.png"), for: UIControlState.normal)
             self.btProfile.setImage(UIImage(named: "iconProfileActive.png"), for: UIControlState.normal)
-            
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend"), for: UIControlState.normal)
+
             break
         case .segToNavigationProfileVC:
             
@@ -757,7 +781,16 @@ extension ViewController:HomeContainerDelegate{
             self.btGroup.setImage(UIImage(named: "iconGroupNonactive.png"), for: UIControlState.normal)
             self.btMessage.setImage(UIImage(named: "iconChat.png"), for: UIControlState.normal)
             self.btProfile.setImage(UIImage(named: "iconProfileActive.png"), for: UIControlState.normal)
-        
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend"), for: UIControlState.normal)
+
+            break
+        case .toFriendRequest:
+            self.btHome.setImage(UIImage(named: "iconHomeNonactive.png"), for: UIControlState.normal)
+            self.btGroup.setImage(UIImage(named: "iconGroupNonactive.png"), for: UIControlState.normal)
+            self.btMessage.setImage(UIImage(named: "iconChat.png"), for: UIControlState.normal)
+            self.btProfile.setImage(UIImage(named: "iconProfileNonactive.png"), for: UIControlState.normal)
+            self.btFriendRequest.setImage(UIImage(named: "icon_friend_active"), for: UIControlState.normal)
+
             break
         }
     }

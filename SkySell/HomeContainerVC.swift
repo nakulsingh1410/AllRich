@@ -21,6 +21,8 @@ class HomeContainerVC: UIViewController {
         case toGroup = "segToGroupVC"
         case toMessage = "segToMessageVC"
         case toProfile = "segToProfileVC"
+        case toFriendRequest = "segToFriendRequestVC"
+
         case segToNavigationProfileVC = "segToNavigationProfileVC"
     }
     
@@ -30,7 +32,8 @@ class HomeContainerVC: UIViewController {
     var myGroup:GroupVC? = nil
     var myMessage:MessageVC? = nil
     var myProfile:ProfileVC? = nil
-    
+    var myFriendRequest:FriendRequestViewController? = nil
+
     var myProfileNavigation:UINavigationController? = nil
     
     
@@ -82,6 +85,11 @@ class HomeContainerVC: UIViewController {
             self.myProfile = segue.destination as? ProfileVC
             
         }
+        if segue.identifier == SegName.toFriendRequest.rawValue {
+            self.myFriendRequest = segue.destination as? FriendRequestViewController
+            
+        }
+        
         
         if segue.identifier == SegName.segToNavigationProfileVC.rawValue {
             self.myProfileNavigation = segue.destination as? UINavigationController
@@ -115,6 +123,10 @@ class HomeContainerVC: UIViewController {
         } else if segue.identifier == SegName.toProfile.rawValue {
             
             self.swapFromViewController(fromViewController: self.childViewControllers[0], ToViewController: self.myProfile!)
+            
+        }
+        else if segue.identifier == SegName.toFriendRequest.rawValue {
+            self.swapFromViewController(fromViewController: self.childViewControllers[0], ToViewController: self.myFriendRequest!)
             
         } else if segue.identifier == SegName.segToNavigationProfileVC.rawValue {
             
@@ -262,6 +274,14 @@ class HomeContainerVC: UIViewController {
             
             break
             
+        case .toFriendRequest:
+            if let _ = self.myFriendRequest{
+                
+                self.swapFromViewController(fromViewController: self.childViewControllers[0], ToViewController: self.myFriendRequest!)
+                return;
+            }
+            
+            break
         }
         
         self.performSegue(withIdentifier: self.currentSegueIdentifier.rawValue, sender: nil)

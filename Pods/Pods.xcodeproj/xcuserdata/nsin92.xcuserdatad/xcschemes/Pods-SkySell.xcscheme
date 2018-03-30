@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "50FDDBD31CF3A9DD57328E2E521B42C6"
+               BlueprintIdentifier = "D6031D69C0E231CEF5D490EEDDB7E43A"
                BuildableName = "Pods_SkySell.framework"
                BlueprintName = "Pods-SkySell"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "50FDDBD31CF3A9DD57328E2E521B42C6"
+            BlueprintIdentifier = "D6031D69C0E231CEF5D490EEDDB7E43A"
             BuildableName = "Pods_SkySell.framework"
             BlueprintName = "Pods-SkySell"
             ReferencedContainer = "container:Pods.xcodeproj">
