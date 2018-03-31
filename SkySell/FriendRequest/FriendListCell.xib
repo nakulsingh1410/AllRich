@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvt-dR-vue">
-                                <rect key="frame" x="86" y="47" width="154" height="17"/>
+                                <rect key="frame" x="86" y="47" width="35.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzW-Dg-zuv">
-                                <rect key="frame" x="245" y="42" width="70" height="30"/>
+                                <rect key="frame" x="269" y="42" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.4549019608" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,13 +105,11 @@
                             <constraint firstItem="vzW-Dg-zuv" firstAttribute="top" secondItem="th1-Ga-Hgw" secondAttribute="bottom" constant="4" id="eJy-YN-jMR"/>
                             <constraint firstItem="lk5-PH-Lwo" firstAttribute="leading" secondItem="aXA-mG-NF0" secondAttribute="leading" id="gJC-US-uXA"/>
                             <constraint firstItem="4Wj-Rb-D8N" firstAttribute="width" secondItem="th1-Ga-Hgw" secondAttribute="width" id="h8f-ve-6QX"/>
-                            <constraint firstItem="vzW-Dg-zuv" firstAttribute="width" secondItem="th1-Ga-Hgw" secondAttribute="width" id="i50-of-7tz"/>
                             <constraint firstItem="4Wj-Rb-D8N" firstAttribute="trailing" secondItem="vzW-Dg-zuv" secondAttribute="trailing" id="k6t-LE-ECo"/>
                             <constraint firstItem="th1-Ga-Hgw" firstAttribute="top" secondItem="RQR-65-dG1" secondAttribute="top" constant="8" id="mB6-cK-DBI"/>
                             <constraint firstAttribute="trailing" secondItem="th1-Ga-Hgw" secondAttribute="trailing" constant="5" id="pRh-t9-7kD"/>
                             <constraint firstItem="2yj-4S-fGU" firstAttribute="top" secondItem="RQR-65-dG1" secondAttribute="top" constant="8" id="sHJ-uO-GKs"/>
                             <constraint firstItem="4Wj-Rb-D8N" firstAttribute="top" secondItem="vzW-Dg-zuv" secondAttribute="bottom" constant="4" id="xwe-om-lgF"/>
-                            <constraint firstItem="Pvt-dR-vue" firstAttribute="trailing" secondItem="aXA-mG-NF0" secondAttribute="trailing" id="zBW-Tl-EbY"/>
                         </constraints>
                     </view>
                 </subviews>

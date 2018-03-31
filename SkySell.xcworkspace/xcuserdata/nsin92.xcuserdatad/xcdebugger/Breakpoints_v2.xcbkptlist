@@ -68,7 +68,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "544120576.626363"
+                  timestampString = "544210707.57524"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "621"
@@ -83,7 +83,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "544120576.628651"
+                  timestampString = "544210707.5771689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "623"
@@ -276,7 +276,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "544120576.637742"
+                  timestampString = "544210707.584864"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "666"
@@ -291,7 +291,7 @@
                   moduleName = "SkySell"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nsin92/Desktop/DemoApp/AllRich/SourceCode/AllRich/SkySell/LoginVC.swift"
-                  timestampString = "544120576.639883"
+                  timestampString = "544210707.586942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "668"
@@ -388,7 +388,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.691165"
+            timestampString = "544212078.453281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "412"
@@ -404,7 +404,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.691533"
+            timestampString = "544212078.453658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "416"
@@ -420,7 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.691771"
+            timestampString = "544212078.4539061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1154"
@@ -436,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.692014"
+            timestampString = "544212078.4541579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "428"
@@ -452,7 +452,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.692243"
+            timestampString = "544212078.454399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "527"
@@ -468,7 +468,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/PostSellVC.swift"
-            timestampString = "544125713.69247"
+            timestampString = "544212078.45464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "720"
@@ -484,7 +484,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.6927021"
+            timestampString = "544212078.454886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -532,7 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.693042"
+            timestampString = "544212078.455207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
@@ -692,7 +692,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.693455"
+            timestampString = "544212078.455565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -836,7 +836,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.693826"
+            timestampString = "544212078.455887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -996,11 +996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/Refer&amp;Earn/ReferAndEarnViewController.swift"
-            timestampString = "543852882.888862"
+            timestampString = "544212078.456249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "loadinviteCode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1108,11 +1108,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/FriendRequest/FriendRequestViewController.swift"
-            timestampString = "544125713.694356"
+            timestampString = "544212078.4565769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "getAppUserAPi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1124,7 +1124,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.694627"
+            timestampString = "544212078.4566309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -1140,7 +1140,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/WebService/WebServiceModel.swift"
-            timestampString = "544125713.694875"
+            timestampString = "544212078.456864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -1156,12 +1156,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/FriendRequest/FriendRequestViewController.swift"
-            timestampString = "544125713.695128"
+            timestampString = "544212078.457085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "friendListAPi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/FriendRequest/FriendListCell.swift"
+            timestampString = "544212078.457137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "loadData(model:requestType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1171,13 +1187,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SkySell/FriendRequest/FriendRequestViewController.swift"
-            timestampString = "544125713.695357"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "544212078.457191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "friendListAPi()"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "createFriendRequest(selectedUser:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "544212078.457426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "pendingFriendList(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "544212078.457654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "responseOfFriendRequest(selectedUser:requestStatus:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "544212078.457881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "createFriendRequest(selectedUser:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/FriendRequest/FriendRequestViewController.swift"
+            timestampString = "544212078.458182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "createFriendRequestApi(selecteduserId:model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1188,12 +1268,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SkySell/FriendRequest/FriendListCell.swift"
-            timestampString = "544125713.695582"
+            timestampString = "544212078.458243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "loadData(model:requestType:)"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "setButtonsTitles(requestStatus:requestType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/FriendRequest/FriendRequestViewController.swift"
+            timestampString = "544212078.458288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "responseOfFriendRequestApi(selecteduserId:requestStatus:model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SkySell/WebService/WebServiceModel.swift"
+            timestampString = "544212078.458329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
+            landmarkName = "responseOfFriendRequest(selectedUser:requestStatus:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

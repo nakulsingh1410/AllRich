@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="points_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4CX-NC-b54">
-                    <rect key="frame" x="9" y="0.5" width="18" height="18"/>
+                    <rect key="frame" x="11" y="2" width="15" height="15"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="18" id="hNZ-1l-Vsh"/>
-                        <constraint firstAttribute="width" constant="18" id="lRw-Mz-AMN"/>
+                        <constraint firstAttribute="height" constant="15" id="hNZ-1l-Vsh"/>
+                        <constraint firstAttribute="width" constant="15" id="lRw-Mz-AMN"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgf-vL-hNt">
@@ -38,7 +38,7 @@
             <constraints>
                 <constraint firstItem="4CX-NC-b54" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6ad-oK-atb"/>
                 <constraint firstItem="qgf-vL-hNt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qpj-rg-hb4"/>
-                <constraint firstItem="qgf-vL-hNt" firstAttribute="leading" secondItem="4CX-NC-b54" secondAttribute="trailing" id="jpR-CY-7aC"/>
+                <constraint firstItem="qgf-vL-hNt" firstAttribute="leading" secondItem="4CX-NC-b54" secondAttribute="trailing" constant="1" id="jpR-CY-7aC"/>
                 <constraint firstItem="qgf-vL-hNt" firstAttribute="centerY" secondItem="4CX-NC-b54" secondAttribute="centerY" id="yGA-dd-4Au"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

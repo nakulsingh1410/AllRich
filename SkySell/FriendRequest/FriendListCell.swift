@@ -24,18 +24,6 @@ enum FriendRequestButtonTitle:String {
     case pendingResponse = " Pending Response "
 
 }
-/**
- 
- "requestStatus":"accepted"}
- 
- {"requestUserId":"X4OitNT3xBSJNA5try7ZF186BoA2","responseUserId":"PFm5p7Jc52cLbtbwbKdKnmkR5lv1","requestStatus":"declined"}
- 
- {"requestUserId":"X4OitNT3xBSJNA5try7ZF186BoA2","responseUserId":"PFm5p7Jc52cLbtbwbKdKnmkR5lv1","requestStatus":"blocked"}
- 
- {"requestUserId":"X4OitNT3xBSJNA5try7ZF186BoA2","responseUserId":"PFm5p7Jc52cLbtbwbKdKnmkR5lv1","requestStatus":"unfriend"}
-
- 
- */
 
 enum FriendListType:String {
     case appUser = "AppUser"
@@ -136,8 +124,9 @@ class FriendListCell: UITableViewCell {
         if requestTypeObj == .appUser{
             if requestStatus == "new" {
                 btnSecond.backgroundColor = blueColor
-                btnSecond.setTitle(FriendRequestButtonTitle.accept.rawValue, for: .normal)
-            }else {
+                btnSecond.setTitle(FriendRequestButtonTitle.request.rawValue, for: .normal)
+            }
+            if requestStatus == "pending" {
                 btnSecond.backgroundColor = grayColor
                 btnSecond.setTitle(FriendRequestButtonTitle.pendingResponse.rawValue, for: .normal)
             }
@@ -154,12 +143,11 @@ class FriendListCell: UITableViewCell {
         if requestTypeObj == .friendRequest{
             btnFirst.setTitle(FriendRequestButtonTitle.accept.rawValue, for: .normal)
             btnSecond.setTitle(FriendRequestButtonTitle.declined.rawValue, for: .normal)
-            btnSecond.setTitle(FriendRequestButtonTitle.block.rawValue, for: .normal)
+            btnThird.setTitle(FriendRequestButtonTitle.block.rawValue, for: .normal)
             btnFirst.isHidden = false
             btnSecond.isHidden = false
-            btnThird.isHidden = true
+            btnThird.isHidden = false
         }
-        
         
     }
 

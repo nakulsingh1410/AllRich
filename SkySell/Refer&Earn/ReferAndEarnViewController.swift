@@ -16,6 +16,9 @@ class ReferAndEarnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        inviteImage.layer.cornerRadius = 10.0
+        inviteImage.clipsToBounds = true
+
         btnShare.layer.cornerRadius = 3.0
         btnShare.clipsToBounds = true
         loadinviteCode()
@@ -37,7 +40,8 @@ class ReferAndEarnViewController: UIViewController {
         if let inviteCode = lblInviteCode.text {
             let text = inviteCode
             // set up activity view controller
-            let textToShare = [ text ]
+            let appShareUrl =  "https://itunes.apple.com/in/app/allrich/id1362807498?mt=8"
+            let textToShare:[Any] = [ text ,appShareUrl]
             let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
             
