@@ -182,6 +182,17 @@ class ProductListVC: UIViewController {
         self.viNoItem.alpha = 0
         self.viNoItem.isUserInteractionEnabled = false
         self.view.bringSubview(toFront: self.viNoItem)
+        getPostsByCategoryIdApi(catId: category.category_id)
+    }
+    
+    
+    func getPostsByCategoryIdApi(catId:String)  {
+        WebServiceModel.getPostsByCategoryId(categoryId: catId) { (arrData) in
+            if let array = arrData{
+                self.arProduct = array
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -1277,12 +1288,10 @@ extension ProductListVC:UICollectionViewDataSource, UICollectionViewDelegate{
               
                 
                 cell.lbTitle.text = product.title
-                if product.points.count > 0{
-                    let strPoint =  Int(product.points) == 1 ? " Point" : " Points"
-                    cell.lblPoints.text = product.points + strPoint
-                }else{
-                    cell.lblPoints.text = "0 Point"
-                }
+              
+                let strPoint =  product.points < 2 ? " Point" : " Points"
+                cell.lblPoints.text = "\(product.points)" + strPoint
+               
                 
                 cell.lbDetail.text = self.mySetting.priceWithString(strPricein: product.price)
                 

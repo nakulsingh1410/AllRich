@@ -402,11 +402,8 @@ class ViewController: UIViewController {
             if(show == true){
                /// self.btCamera_Layout_Buttom.constant = 16
                 self.viMenuBarBG_Layout_Buttom.constant = 0
-                
                 self.viMenuBarBG.isUserInteractionEnabled = true
-                
                // self.viCameraBG.isUserInteractionEnabled = true
-                
                 
             }else{
                // self.btCamera_Layout_Buttom.constant = -65
@@ -810,7 +807,7 @@ extension ViewController{
             (alert: UIAlertAction!) -> Void in
             let email = ShareData.sharedInstance.userInfo.email
             let userId = ShareData.sharedInstance.userInfo.uid
-            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:false)
+            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:false, isComingFromRegistration: false)
         })
         //
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
@@ -831,7 +828,7 @@ extension ViewController{
             (alert: UIAlertAction!) -> Void in
             let email = ShareData.sharedInstance.userInfo.email
             let userId = ShareData.sharedInstance.userInfo.uid
-            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:true)
+            NavigationManager.navigateToPayment(navigationController: self.navigationController, email: email, userId: userId,iSTopup:true, isComingFromRegistration: false)
         })
         let viewPayment = UIAlertAction(title: "Payment History", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in

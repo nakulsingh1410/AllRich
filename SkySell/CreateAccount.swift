@@ -568,7 +568,7 @@ class CreateAccount: UIViewController {
             
             
             if self.strMembershipType == "Premium"{
-                NavigationManager.navigateToPayment(navigationController: self.navigationController, email: self.strEmail,userId: self.str_UID, iSTopup: false)
+                NavigationManager.navigateToPayment(navigationController: self.navigationController, email: self.strEmail,userId: self.str_UID, iSTopup: false, isComingFromRegistration: true)
             }else{
                 let alertController = UIAlertController(title: "SUCCESS!!", message: "Please Verify Your Email \(self.strEmail).", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in

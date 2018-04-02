@@ -93,6 +93,7 @@
 		3069B0AF2062B9700042EE77 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3069B0AB2062B96F0042EE77 /* README.md */; };
 		3069B0B12062B98B0042EE77 /* CardExpiryPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3069B0B02062B98B0042EE77 /* CardExpiryPickerView.xib */; };
 		3069B0B32062B9E90042EE77 /* CardExpiryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B0B22062B9E90042EE77 /* CardExpiryPickerView.swift */; };
+		30735E772070C0360038FF4A /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30735E762070C0360038FF4A /* ProductListModel.swift */; };
 		30950F4B206E10C7009FAD13 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30950F4A206E10C7009FAD13 /* FriendRequestViewController.swift */; };
 		30950F4E206E2626009FAD13 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30950F4C206E2626009FAD13 /* FriendListCell.swift */; };
 		30950F4F206E2626009FAD13 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30950F4D206E2626009FAD13 /* FriendListCell.xib */; };
@@ -1393,6 +1394,7 @@
 		3069B0AB2062B96F0042EE77 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3069B0B02062B98B0042EE77 /* CardExpiryPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardExpiryPickerView.xib; sourceTree = "<group>"; };
 		3069B0B22062B9E90042EE77 /* CardExpiryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpiryPickerView.swift; sourceTree = "<group>"; };
+		30735E762070C0360038FF4A /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		30950F4A206E10C7009FAD13 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
 		30950F4C206E2626009FAD13 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		30950F4D206E2626009FAD13 /* FriendListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListCell.xib; sourceTree = "<group>"; };
@@ -2681,6 +2683,7 @@
 			isa = PBXGroup;
 			children = (
 				30002A3B20654DE100E35556 /* WebServiceModel.swift */,
+				30735E762070C0360038FF4A /* ProductListModel.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -5655,6 +5658,7 @@
 				A7414B731EE6CA4900F76FE0 /* RealmUserDataObject.swift in Sources */,
 				A74872DE1EE13DD600BE74E3 /* SettingMenuVC.swift in Sources */,
 				A79F775E1E9DD2AC007EF9B8 /* AppDelegate.swift in Sources */,
+				30735E772070C0360038FF4A /* ProductListModel.swift in Sources */,
 				A7F066A91ECC0CED00D5F0C7 /* MultiSelectImageCollectionCell.swift in Sources */,
 				031D41181EA487AA00CDD8FB /* ProductContainerVC.swift in Sources */,
 				A7CB076A1EB82CA6000D8498 /* LoginVC.swift in Sources */,

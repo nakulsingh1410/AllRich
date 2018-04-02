@@ -10,12 +10,13 @@ import UIKit
 
 class NavigationManager: NSObject {
 
-    class func navigateToPayment(navigationController:UINavigationController?,email:String,userId:String,iSTopup:Bool){
+    class func navigateToPayment(navigationController:UINavigationController?,email:String,userId:String,iSTopup:Bool,isComingFromRegistration:Bool){
         let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: PaymentViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "PaymentViewController") as? PaymentViewController{
             vcObj.email = email
             vcObj.userId = userId
             vcObj.isTopup = iSTopup
+            vcObj.isComingFromRegistration = isComingFromRegistration
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

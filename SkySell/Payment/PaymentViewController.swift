@@ -28,6 +28,7 @@ class PaymentViewController: UIViewController {
     var userId = ""
     var email = ""
     var isTopup = false
+    var isComingFromRegistration = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,13 +41,16 @@ class PaymentViewController: UIViewController {
         txtFCardNumber.delegate = self
         txtFCVC.delegate = self
         
-        
-        if isTopup {
-            btnBack.isHidden = false
-            btnSkip.isHidden = true
-        }else{
+        if isComingFromRegistration == true{
             btnBack.isHidden = true
             btnSkip.isHidden = false
+        }else{
+            btnBack.isHidden = false
+            if isTopup {
+                btnSkip.isHidden = true
+            }else{
+                btnSkip.isHidden = false
+            }
         }
         
     }

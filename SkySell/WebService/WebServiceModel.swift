@@ -320,9 +320,11 @@ class WebServiceModel: NSObject {
     class func responseOfFriendRequest(selectedUser:String,requestStatus:String,callback:@escaping ( Bool?)-> Void) {
         Global.showHud()
         let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
-        let parameters = ["userId":uid,
-                          "selectedUser":selectedUser,
+        let parameters = ["requestUserId":uid,
+                          "responseUserId":selectedUser,
                           "requestStatus":requestStatus]
+        
+        
         
         guard let url = URL(string: "https://us-central1-newmybanknotes.cloudfunctions.net/responseOfFriendRequest") else { return }
         var request = URLRequest(url: url)
@@ -356,6 +358,65 @@ class WebServiceModel: NSObject {
             Global.hideHud()
             }.resume()
     }
+    //
+    /*************************************************************/
+    class func getPostsByCategoryId(categoryId:String,callback:@escaping ( [RealmProductDataModel]?)-> Void) {
+        Global.showHud()
+        let uid = ShareData.sharedInstance.loadsaveUserInfo_UID()
+        let parameters = ["userId":uid,
+                          "categoryId":categoryId]
+
+        
+        
+        guard let url = URL(string: "https://us-central1-newmybanknotes.cloudfunctions.net/getPostsByCategoryId") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            
+            if let response = response {
+                print("Params =\(parameters)\n \(response.url)")
+            }
+            if let data = data {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
+                        print(json)
+                       let array = getRealmProductDataModelArrayFromDictionary(dictionary: json)
+                        callback(array);
+                    }
+                    Global.hideHud()
+                } catch {
+                    print(error)
+                    Global.hideHud()
+                    callback(nil);
+
+                }
+            }
+            Global.hideHud()
+            }.resume()
+    }
+    
+    class func getRealmProductDataModelArrayFromDictionary(dictionary:[String:Any]) ->[RealmProductDataModel]{
+        var arrProductList = [RealmProductDataModel]()
+        for (key,_) in dictionary {
+            if let newDictionary = dictionary[key] as? [String:Any]{
+//                arrayDictionay.append(newDictionary)
+                let model = RealmProductDataModel()
+                model.readJson(obj: newDictionary as NSDictionary)
+                arrProductList.append(model)
+            }
+        }
+        
+      arrProductList =  arrProductList.sorted(by: {$0.points < $1.points})
+    return arrProductList
+    }
+    
+    
+    /********************************************************/
     
 }
 
