@@ -166,10 +166,7 @@ class RealmProductDataModel: Object {
             if let image_src = product_img.object(forKey: "src") as? String{
                 self.image_src = image_src
             }
-            if let points = product_img.object(forKey: "points") as? Int{
-                self.points = points
-            }
-            
+           
         }
         
         ///////------------------------------------------------------------------
@@ -395,6 +392,9 @@ class RealmProductDataModel: Object {
             self.country = country
         }
         
+        if let points = obj["points"] as? String ,let newPoint = Int(points){
+            self.points = newPoint
+        }
         
         /*
          if let likeCount = obj.object(forKey: "likeCount") as? NSInteger{

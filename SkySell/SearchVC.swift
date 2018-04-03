@@ -23,6 +23,7 @@ class SearchVC: UIViewController {
         case recent
         case popular
         case lowest
+        case points
     }
     
     var sortBy:SortBy = .popular
@@ -334,6 +335,9 @@ class SearchVC: UIViewController {
             strTitle = "Sort by/Filter: Lowest price ▾"
             break
             
+        case .points:
+            strTitle = "Sort by/Filter: Points ▾"
+            break
         }
         
         self.lbSortTitle.text = strTitle
@@ -362,6 +366,9 @@ class SearchVC: UIViewController {
             rangOfString = strNS.range(of: "Lowest price ▾")
             break
             
+        case .points:
+            rangOfString = strNS.range(of: "Points ▾")
+            break
         }
         
         
@@ -601,6 +608,10 @@ class SearchVC: UIViewController {
                     ascending = true
                     break
                     
+                case .points:
+                    sortByKey = "points"
+                    ascending = false
+                    break
                 }
                 
                 
@@ -931,6 +942,10 @@ class SearchVC: UIViewController {
                 ascending = true
                 break
                 
+            case .points:
+                sortByKey = "points"
+                ascending = false
+                break
             }
             
             

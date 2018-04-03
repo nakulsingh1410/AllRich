@@ -18,6 +18,7 @@ class ProductListVC: UIViewController {
         case recent
         case popular
         case lowest
+        case points
     }
     
     @IBOutlet weak var viFilterBG: UIView!
@@ -63,7 +64,8 @@ class ProductListVC: UIViewController {
     
     
     var arProduct:[RealmProductDataModel] = [RealmProductDataModel]()
-    
+    var arrNewProductList:[RealmProductDataModel] = [RealmProductDataModel]()
+
     
     var myData:ShareData = ShareData.sharedInstance
     var mySetting:SettingData = SettingData.sharedInstance
@@ -80,7 +82,7 @@ class ProductListVC: UIViewController {
     
     var haveNoti:Bool = false
     
-    var sortBy:SortBy = .popular
+    var sortBy:SortBy = .points
     
     
     var strKeyword:String = ""
@@ -185,11 +187,14 @@ class ProductListVC: UIViewController {
         getPostsByCategoryIdApi(catId: category.category_id)
     }
     
-    
+    //MARK: getPostByCatId
     func getPostsByCategoryIdApi(catId:String)  {
         WebServiceModel.getPostsByCategoryId(categoryId: catId) { (arrData) in
             if let array = arrData{
-                self.arProduct = array
+                self.arrNewProductList = array
+            }
+            DispatchQueue.main.async {
+                self.connectToProductList()
             }
         }
         
@@ -341,6 +346,9 @@ class ProductListVC: UIViewController {
             strTitle = "Sort by/Filter: Lowest price ▾"
             break
             
+        case .points:
+            strTitle = "Sort by/Filter: Points ▾"
+            break
         }
         
         self.lbSortTitle.text = strTitle
@@ -369,6 +377,9 @@ class ProductListVC: UIViewController {
             rangOfString = strNS.range(of: "Lowest price ▾")
             break
             
+        case .points:
+            rangOfString = strNS.range(of: "Points ▾")
+            break
         }
         
         
@@ -393,6 +404,16 @@ class ProductListVC: UIViewController {
         }
         alertController.addAction(cancelAction)
         
+        let points = UIAlertAction(title: "Points", style: .default) { action in
+            // ...
+            self.sortBy = .points
+            
+            self.setSortTitle()
+            self.connectToProductList()
+            
+            
+        }
+        alertController.addAction(points)
         
         
         
@@ -570,68 +591,81 @@ class ProductListVC: UIViewController {
         
         DispatchQueue.main.async {
             self.arProduct.removeAll()
-            let otherRealm = try! Realm()
-            
-            
-            
-            
-            
-            
-            
+   
             var predicate:String = String(format: "category1 = '%@'", self.category.category_id)
-            
             
             var arKey:[String] = self.strKeyword.components(separatedBy: " ")
             if((arKey.count > 0) && (self.strKeyword.count > 0)){
-                
                 var strPredicate:String = String(format: "title CONTAINS[c] '%@'", arKey[0])
-                
                 for i in 1..<arKey.count{
                     strPredicate = String(format: "%@ AND title CONTAINS[c] '%@'", strPredicate, arKey[i])
                 }
-                
-                
                 strPredicate = String(format: "%@ AND category1 = '%@'", strPredicate, self.category.category_id)
-                
                 predicate = strPredicate
                 
             }else{
                 
             }
-            
-            
-            
-            
+     
             var sortByKey:String = "likeCount"
             var ascending:Bool = true
             
+            var   otherResults =  [RealmProductDataModel]()
             switch self.sortBy {
             case .heighestPrice:
                 sortByKey = "priceInNumber"
+                
                 ascending = false
+               otherResults =  self.arrNewProductList.sorted(by: { (model1, model2) -> Bool in
+                 return model1.priceInNumber > model2.priceInNumber
+                })
                 break
             case .recent:
                 sortByKey = "updated_at_Date"
-            
+                otherResults =  self.arrNewProductList.sorted(by: { (model1, model2) -> Bool in
+                    return  model1.updated_at_Date < model2.updated_at_Date
+                })
                 break
             case .popular:
                 sortByKey = "likeCount"
                 ascending = false
+                otherResults =  self.arrNewProductList.sorted(by: { (model1, model2) -> Bool in
+                    return model1.likeCount > model2.likeCount
+                })
                 break
             case .lowest:
                 sortByKey = "priceInNumber"
                 ascending = true
+                otherResults =  self.arrNewProductList.sorted(by: { (model1, model2) -> Bool in
+                    return model1.priceInNumber < model2.priceInNumber
+                })
                 break
-                
+            case .points:
+                sortByKey = "points"
+                ascending = false
+                otherResults =  self.arrNewProductList.sorted(by: { (model1, model2) -> Bool in
+                    return Int(model1.points) > (model2.points)
+                })
             }
             
+          //  let otherResults = self.arrNewProductList
+
             
-            let otherResults = otherRealm.objects(RealmProductDataModel.self).filter(predicate).sorted(byKeyPath: sortByKey, ascending: ascending)
+//            let bPredicate: NSPredicate = NSPredicate(format: predicate)
+//
+//
+//            guard let otherResults =  NSArray(array:self.arrNewProductList).filtered(using: bPredicate) as? [RealmProductDataModel] else{return}
+//            otherResults.sorted(by: { (model1, model2) -> Bool in
+//
+//                if
+//
+//            })
+            ///
             
-            print("Number of product \(otherResults.count)")
+           print("Number of product \(otherResults.count)")
             
             var arBuffer:[RealmProductDataModel] = [RealmProductDataModel]()
-            
+           
             for pro in otherResults{
                 
                 
@@ -639,16 +673,10 @@ class ProductListVC: UIViewController {
                 
                 newP.category1 = pro.category1
                 newP.category2 = pro.category2
-                
                 newP.created_at_Date = pro.created_at_Date
-                
                 newP.image_name = pro.image_name
                 newP.image_path = pro.image_path
                 newP.image_src = pro.image_src
-                
-                
-                
-                
                 newP.isDeleted = pro.isDeleted
                 newP.isNew = pro.isNew
                 newP.likeCount = pro.likeCount
@@ -669,8 +697,6 @@ class ProductListVC: UIViewController {
                     newItem.serialNumber = item.serialNumber
                     newP.product_serials.append(newItem)
                 }
-                
-                
                 newP.product_status = pro.product_status
                 newP.status = pro.status
                 newP.title = pro.title
@@ -681,14 +707,8 @@ class ProductListVC: UIViewController {
                 newP.country = pro.country
                 newP.points = pro.points
 
-                
-                
-                
-                
                 newP.viewCount = pro.viewCount
-                
-                
-                
+  
                 newP.owner_FirstName = pro.owner_FirstName
                 newP.owner_LastName = pro.owner_LastName
                 newP.owner_Image_src = pro.owner_Image_src
@@ -696,28 +716,18 @@ class ProductListVC: UIViewController {
                 newP.isUserLike = false
                 let myData:ShareData = ShareData.sharedInstance
                 if(myData.userInfo != nil){
-                    
                     for like in myData.userLike{
-                        
                         if(newP.product_id == like.product_id){
                             newP.isUserLike = true
                         }
                     }
-                    
                 }
                 
-                
                 if((newP.product_status == "Sold Out") || (newP.isDeleted == true)){
-                    
                     
                 }else{
                     arBuffer.append(newP)
                 }
-                
-                
-                
-                
-                
             }
             
             /*
@@ -726,19 +736,10 @@ class ProductListVC: UIViewController {
             })*/
             
             self.arProduct = arBuffer
-            
-    
             self.myCollection.reloadData()
-            
             self.myCollectionLayout.reloadLayout()
-            
-            
             self.myCollection.reloadData()
-            
             self.loadOwnerData()
-            
-            
-            
             UIView.animate(withDuration: 0.45, animations: { 
                 if(self.arProduct.count > 0){
                     self.viNoItem.alpha = 0
@@ -747,17 +748,9 @@ class ProductListVC: UIViewController {
                     self.viNoItem.alpha = 1
                 }
             })
-            
             self.removeActivityView()
             self.working = false
-            
         }
-        
-        
-        
-        
-        
-        
         
         ///--------------------------------
         /*
@@ -862,8 +855,6 @@ class ProductListVC: UIViewController {
             
             
             
-            let otherRealm = try! Realm()
-            
             var predicate:String = String(format: "category1 = '%@' AND category2 = '%@'", self.category.category_id, subCat)
             
             
@@ -909,10 +900,14 @@ class ProductListVC: UIViewController {
                 ascending = true
                 break
                 
+            case .points:
+                sortByKey = "points"
+                ascending = false
+                break
             }
             
             
-            let otherResults = otherRealm.objects(RealmProductDataModel.self).filter(predicate).sorted(byKeyPath: sortByKey, ascending: ascending)
+            let otherResults = self.arrNewProductList
             
             
             
@@ -1068,7 +1063,6 @@ class ProductListVC: UIViewController {
     
     func addLiketo(ProductId productId:String, Like like:Bool) {
         
-        
         if(ShareData.sharedInstance.userInfo == nil){
             return
         }
@@ -1097,11 +1091,6 @@ class ProductListVC: UIViewController {
                     }
                     i = i - 1
                 }
-                
-                
-                
-        
-                
                 getProductDataWith(ProductID: product.product_id, Finish: { (product) in
                     for p in self.arProduct{
                         if(p.product_id == product.product_id){
@@ -1111,14 +1100,7 @@ class ProductListVC: UIViewController {
                     
                     self.myCollection.reloadData()
                 })
-                
-                
-                
-                
-                
-                
-                
-                
+
             }
             
             

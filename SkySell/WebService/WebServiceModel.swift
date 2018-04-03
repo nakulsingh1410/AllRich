@@ -411,7 +411,7 @@ class WebServiceModel: NSObject {
             }
         }
         
-      arrProductList =  arrProductList.sorted(by: {$0.points < $1.points})
+      arrProductList =  arrProductList.sorted(by: {$0.points > $1.points})
     return arrProductList
     }
     
