@@ -347,7 +347,7 @@ class ProductListVC: UIViewController {
             break
             
         case .points:
-            strTitle = "Sort by/Filter: Points ▾"
+             strTitle = "Sort by/Filter: Highest price ▾"
             break
         }
         
@@ -378,7 +378,9 @@ class ProductListVC: UIViewController {
             break
             
         case .points:
-            rangOfString = strNS.range(of: "Points ▾")
+//            rangOfString = strNS.range(of: "Points ▾")
+            rangOfString = strNS.range(of: "Highest price ▾")
+
             break
         }
         
@@ -404,17 +406,17 @@ class ProductListVC: UIViewController {
         }
         alertController.addAction(cancelAction)
         
-        let points = UIAlertAction(title: "Points", style: .default) { action in
-            // ...
-            self.sortBy = .points
-            
-            self.setSortTitle()
-            self.connectToProductList()
-            
-            
-        }
-        alertController.addAction(points)
-        
+//        let points = UIAlertAction(title: "Points", style: .default) { action in
+//            // ...
+//            self.sortBy = .points
+//
+//            self.setSortTitle()
+//            self.connectToProductList()
+//
+//
+//        }
+//        alertController.addAction(points)
+//
         
         
         let recentAction = UIAlertAction(title: "Recent", style: .default) { action in

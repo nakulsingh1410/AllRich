@@ -91,6 +91,7 @@ class UserMainSceneVC: UIViewController {
     
     @IBOutlet weak var btItemLike: UIButton!
     @IBOutlet weak var btSetting: UIButton!
+    @IBOutlet weak var lblUserPoints: UILabel!
     
     
     
@@ -105,7 +106,7 @@ class UserMainSceneVC: UIViewController {
     var cellPadding: CGFloat = 8.0
     var maxWidth:CGFloat = 195.0
     
-    var topBarHeight:CGFloat = 0
+    var topBarHeight:CGFloat = 20
     
     
     
@@ -268,9 +269,7 @@ class UserMainSceneVC: UIViewController {
             self.myCollection.dataSource = self
             self.myCollection.clipsToBounds = false
             
-            
-            
-            
+
             //------------------------------
             
             self.layout_topbarHeight.constant = self.topBarHeight
@@ -285,10 +284,6 @@ class UserMainSceneVC: UIViewController {
             
         }
         
-        
-        
-        
-        
         if(self.seller.uid == self.myData.userInfo.uid){
             let image:UIImage = UIImage(named: "like.png")!
             self.btLikes.setImage(image, for: UIControlState.normal)
@@ -296,6 +291,8 @@ class UserMainSceneVC: UIViewController {
             let image:UIImage = UIImage(named: "iconOther.png")!
             self.btLikes.setImage(image, for: UIControlState.normal)
         }
+        
+        lblUserPoints.text = "Points: \(appDelegate.point)"
         
     }
 
@@ -365,12 +362,6 @@ class UserMainSceneVC: UIViewController {
             }
             
         }
-        
-        
-        
-        
-        
-        
         
         
         if(self.myData.showUserSceneFirstTime == true){

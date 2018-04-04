@@ -184,26 +184,36 @@ class PlanVC: UIViewController {
             
             
             //Find free plan
-            for m in self.myData.bufferAllPlans{
-                if((m.amount <= 0) && (m.isActive == true)){
-                    
-                    var have:Bool = false
-                    for c in self.arProduct{
-                        if(c.firebase.plan_id == m.plan_id){
-                            have = true
-                            break
-                        }
+            
+            
+            if appDelegate.isPremiumMember {
+                let model = self.myData.bufferAllPlans.filter({ (planModel) -> Bool in
+                    if planModel.plan_name == "Premium Plan" {
+                        return true
                     }
-                    
-                    if(have == false){
-                        let newItem:SkySellInApp = SkySellInApp()
-                        newItem.firebase = m
-                        arProductBuffer.append(newItem)
-                    }
+                    return false
+                })
+                if let modelObj = model.last{
+                    let newItem:SkySellInApp = SkySellInApp()
+                    newItem.firebase = modelObj
+                    newItem.firebase.amount = appDelegate.point
+                    arProductBuffer.append(newItem)
                     
                 }
+            }else{
+                let model = self.myData.bufferAllPlans.filter({ (planModel) -> Bool in
+                    if planModel.plan_name == "Free Plan" {
+                        return true
+                    }
+                    return false
+                })
+                if let modelObj = model.last{
+                    let newItem:SkySellInApp = SkySellInApp()
+                    newItem.firebase = modelObj
+                    arProductBuffer.append(newItem)
+                }
+                
             }
-            
             
             
             self.arProduct = arProductBuffer.sorted(by: { (obj1, obj2) -> Bool in
@@ -211,10 +221,36 @@ class PlanVC: UIViewController {
                 return (obj1.firebase.order < obj2.firebase.order)
             })
             
+   /**         for m in self.myData.bufferAllPlans{
+                if((m.amount <= 0) && (m.isActive == true)){
+
+                    var have:Bool = false
+                    for c in self.arProduct{
+                        if(c.firebase.plan_id == m.plan_id){
+                            have = true
+                            break
+                        }
+                    }
+
+                    if(have == false){
+                        let newItem:SkySellInApp = SkySellInApp()
+                        newItem.firebase = m
+                        arProductBuffer.append(newItem)
+                    }
+
+                }
+            }
+
+             self.arProduct = arProductBuffer.sorted(by: { (obj1, obj2) -> Bool in
+             
+             return (obj1.firebase.order < obj2.firebase.order)
+             })
+
             let canpost:NSInteger = self.myData.getListtingsUserCanPost()
             print("Can post : \(canpost)")
-            
+
             print("user plan : \(self.myData.getUserPlan()?.plan_name)")
+            */
             
             self.myCollection.reloadData()
             

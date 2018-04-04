@@ -780,14 +780,9 @@ class ShareData: NSObject {
         query.observeSingleEvent(of: FIRDataEventType.value, with:{ (snapshot) in
             
             self.arBanUser.removeAll()
-            
-            
-            
+
             if let value = snapshot.value as? NSDictionary{
-                
-                
-                
-                
+
                 for object in value.allValues{
                     
                     if let object = object as? NSDictionary{
@@ -798,20 +793,10 @@ class ShareData: NSObject {
                         
                         print("Ban :\(newUser.uid)")
                     }
-                    
-                    
-                    
                 }
             }
-            
-            
             finish()
-            
-            
         })
-        
-        
-        
     }
     
     

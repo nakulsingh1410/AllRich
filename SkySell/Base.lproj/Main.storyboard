@@ -1727,14 +1727,14 @@ There is nothing here yet.</string>
                                 <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLF-dY-tPi">
-                                        <rect key="frame" x="0.0" y="240" width="44" height="123.5"/>
+                                        <rect key="frame" x="0.0" y="258" width="44" height="114.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="xpK-VH-i5t"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loP-sI-SWA">
-                                        <rect key="frame" x="0.0" y="476" width="44" height="123.5"/>
+                                        <rect key="frame" x="0.0" y="485" width="44" height="114.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="BX7-sC-rJN"/>
@@ -1761,7 +1761,7 @@ There is nothing here yet.</string>
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAy-oT-ZBl">
-                                        <rect key="frame" x="0.0" y="363" width="375" height="113"/>
+                                        <rect key="frame" x="0.0" y="372" width="375" height="113"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTO-ah-ytD">
                                                 <rect key="frame" x="153" y="8" width="69" height="69"/>
@@ -1795,10 +1795,10 @@ There is nothing here yet.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prg-xW-uCx">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-5x-MkO">
-                                                <rect key="frame" x="0.0" y="200" width="375" height="40"/>
+                                                <rect key="frame" x="0.0" y="218" width="375" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLd-fJ-te7">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
@@ -1909,18 +1909,33 @@ There is nothing here yet.</string>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstName  LaseName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-Nd-sGd">
                                                 <rect key="frame" x="132" y="8" width="218" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="bX5-lS-2s5"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF8-5X-Cu0">
                                                 <rect key="frame" x="132" y="35" width="218" height="19.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19.5" id="htB-jV-Jdr"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.01176470588" green="0.82352941180000006" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="points" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCx-13-gtg">
+                                                <rect key="frame" x="132" y="56.5" width="218" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="px1-ee-k2A"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                                <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-r9-gLS">
-                                                <rect key="frame" x="122" y="60" width="175" height="33"/>
+                                                <rect key="frame" x="122" y="78.5" width="175" height="33"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-LA-myB">
                                                         <rect key="frame" x="0.0" y="0.0" width="58.5" height="33"/>
@@ -2022,13 +2037,13 @@ There is nothing here yet.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v35-HU-uYD">
-                                                <rect key="frame" x="22" y="162" width="331" height="19.5"/>
+                                                <rect key="frame" x="22" y="180" width="331" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.01176470588" green="0.82352941180000006" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-QM-UyU">
-                                                <rect key="frame" x="22" y="157.5" width="331" height="30"/>
+                                                <rect key="frame" x="22" y="175.5" width="331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="EiM-PQ-Uem"/>
                                                 </constraints>
@@ -2037,7 +2052,7 @@ There is nothing here yet.</string>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPf-8Z-ej3">
-                                                <rect key="frame" x="22" y="97" width="331" height="61"/>
+                                                <rect key="frame" x="22" y="115.5" width="331" height="60.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -2049,7 +2064,9 @@ There is nothing here yet.</string>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="v35-HU-uYD" secondAttribute="trailing" constant="22" id="2FO-ZU-GdU"/>
                                             <constraint firstItem="7Hs-QM-UyU" firstAttribute="leading" secondItem="prg-xW-uCx" secondAttribute="leading" constant="22" id="8ay-2L-wzM"/>
+                                            <constraint firstItem="bCx-13-gtg" firstAttribute="trailing" secondItem="bF8-5X-Cu0" secondAttribute="trailing" id="ChI-cS-tyu"/>
                                             <constraint firstItem="iPf-8Z-ej3" firstAttribute="leading" secondItem="prg-xW-uCx" secondAttribute="leading" constant="22" id="CyF-Lf-SxI"/>
+                                            <constraint firstItem="bCx-13-gtg" firstAttribute="top" secondItem="bF8-5X-Cu0" secondAttribute="bottom" constant="2" id="D7b-ch-Zqf"/>
                                             <constraint firstItem="iPf-8Z-ej3" firstAttribute="top" secondItem="9mR-59-pkd" secondAttribute="bottom" priority="750" constant="4" id="EmN-Xp-Roo"/>
                                             <constraint firstItem="7Hs-QM-UyU" firstAttribute="centerY" secondItem="v35-HU-uYD" secondAttribute="centerY" id="Eu1-QF-Vfx"/>
                                             <constraint firstAttribute="bottom" secondItem="VI6-5x-MkO" secondAttribute="bottom" id="Hko-3A-rua"/>
@@ -2057,6 +2074,7 @@ There is nothing here yet.</string>
                                             <constraint firstAttribute="trailing" secondItem="7Hs-QM-UyU" secondAttribute="trailing" constant="22" id="NTn-FJ-uV8"/>
                                             <constraint firstItem="9mR-59-pkd" firstAttribute="top" secondItem="prg-xW-uCx" secondAttribute="top" constant="8" id="Nyy-ar-dbv"/>
                                             <constraint firstAttribute="trailing" secondItem="bF8-5X-Cu0" secondAttribute="trailing" constant="25" id="PKc-pP-Nqh"/>
+                                            <constraint firstItem="bCx-13-gtg" firstAttribute="leading" secondItem="bF8-5X-Cu0" secondAttribute="leading" id="TNV-Z2-DCY"/>
                                             <constraint firstItem="VI6-5x-MkO" firstAttribute="leading" secondItem="prg-xW-uCx" secondAttribute="leading" id="UYJ-8M-ngI"/>
                                             <constraint firstAttribute="trailing" secondItem="iPf-8Z-ej3" secondAttribute="trailing" constant="22" id="WZS-NN-znf"/>
                                             <constraint firstItem="Jp0-r9-gLS" firstAttribute="leading" secondItem="9mR-59-pkd" secondAttribute="trailing" constant="15" id="ZP1-5E-fjN"/>
@@ -2070,8 +2088,8 @@ There is nothing here yet.</string>
                                             <constraint firstItem="ghC-Nd-sGd" firstAttribute="top" secondItem="prg-xW-uCx" secondAttribute="top" constant="8" id="nyR-Cq-vcE"/>
                                             <constraint firstAttribute="bottom" secondItem="iPf-8Z-ej3" secondAttribute="bottom" constant="82" id="rWC-7i-aae"/>
                                             <constraint firstAttribute="trailing" secondItem="VI6-5x-MkO" secondAttribute="trailing" id="sm7-nc-HjO"/>
-                                            <constraint firstItem="Jp0-r9-gLS" firstAttribute="top" secondItem="bF8-5X-Cu0" secondAttribute="bottom" constant="6" id="xxI-DT-0MT"/>
-                                            <constraint firstAttribute="height" constant="240" id="y2W-al-pjd"/>
+                                            <constraint firstAttribute="height" constant="258" id="y2W-al-pjd"/>
+                                            <constraint firstItem="Jp0-r9-gLS" firstAttribute="top" secondItem="bCx-13-gtg" secondAttribute="bottom" constant="4" id="ymU-Ok-b1Q"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2184,6 +2202,7 @@ There is nothing here yet.</string>
                         <outlet property="lbSad" destination="vxI-Tm-S9L" id="lva-vU-xNs"/>
                         <outlet property="lbSmile" destination="nte-fX-B0t" id="8Z0-18-Ozg"/>
                         <outlet property="lbWeb" destination="v35-HU-uYD" id="vm6-9m-cMF"/>
+                        <outlet property="lblUserPoints" destination="bCx-13-gtg" id="qTY-my-TYt"/>
                         <outlet property="myCollection" destination="rOI-ex-T5j" id="jA5-7a-012"/>
                         <outlet property="viContaintBG" destination="Qd8-xG-mxo" id="e4c-80-fTI"/>
                         <outlet property="viNoItemImage" destination="wTO-ah-ytD" id="7cz-xS-wYo"/>

@@ -27,13 +27,20 @@ class EditProfileVC: UIViewController {
         case space5
         case contact
         case space8
-        case bio
+        case premium
         case space9
+        case bio
+        case space10
         
-        static let count = 16
+        static let count = 18
         
     }
     
+    enum paymentTitle:String {
+        case premimumMember = "Premium - Payment History"
+        case freeMember =  "Payment"
+
+    }
     
     
     var screenSize:CGRect = UIScreen.main.bounds
@@ -78,7 +85,8 @@ class EditProfileVC: UIViewController {
     var strContact:String = ""
     var strBIO:String = ""
     
-    
+    var strPremium:String = "Premium"
+
     
     
     var strCurrency:String = "SGD"
@@ -92,7 +100,8 @@ class EditProfileVC: UIViewController {
     
     var myData:ShareData = ShareData.sharedInstance
     
-    
+    var indexPathForMembershipCell : IndexPath?
+
     
     var haveChangeImage:Bool = false
     var haveChangeData:Bool = false
@@ -178,6 +187,12 @@ class EditProfileVC: UIViewController {
         
         self.myTable.delegate = self
         self.myTable.dataSource = self
+        
+        if appDelegate.isPremiumMember {
+            strPremium = paymentTitle.premimumMember.rawValue
+        }else{
+             strPremium = paymentTitle.freeMember.rawValue
+        }
         
         
     }
@@ -814,7 +829,10 @@ extension EditProfileVC:UITableViewDelegate, UITableViewDataSource{
             cellHeight = 45
         }else if(indexPath.row == CellName.contact.rawValue){
             cellHeight = 45
-        }else if(indexPath.row == CellName.bio.rawValue){
+        }else if(indexPath.row == CellName.premium.rawValue){
+            cellHeight = 45
+        }
+        else if(indexPath.row == CellName.bio.rawValue){
             
             
             cellHeight = heightForView(text: self.strBIO, Font: bioFont, Width: self.screenSize.width - 105) + 52
@@ -984,7 +1002,27 @@ extension EditProfileVC:UITableViewDelegate, UITableViewDataSource{
             
             
             return cell!
-        }else if(indexPath.row == CellName.bio.rawValue){
+        }else if(indexPath.row == CellName.premium.rawValue){
+            let cell:TextFieldWithIconCell? = tableView.dequeueReusableCell(withIdentifier: "TextFieldWithIconCell", for: indexPath) as? TextFieldWithIconCell
+            cell?.selectionStyle = .none
+            cell?.clipsToBounds = true
+            cell?.tag = indexPath.row
+            cell?.tfInput.tag = indexPath.row
+            cell?.tfInput.placeholder = strPremium
+            cell?.tfInput.delegate = self
+            cell?.tfInput.text = strPremium
+            cell?.tfInput.isSecureTextEntry = false
+            cell?.tfInput.isUserInteractionEnabled = true
+            cell?.imageIcon.image = UIImage(named: "call.png")
+            cell?.button.isHidden = false
+            indexPathForMembershipCell = indexPath
+            cell?.button.addTarget(self, action: #selector(EditProfileVC.openPaymentHistory), for: .touchUpInside)
+            
+            
+            
+            return cell!
+        }
+        else if(indexPath.row == CellName.bio.rawValue){
             let cell:TextBoxCell? = tableView.dequeueReusableCell(withIdentifier: "TextBoxCell", for: indexPath) as? TextBoxCell
             cell?.selectionStyle = .none
             cell?.clipsToBounds = true
@@ -1300,3 +1338,20 @@ extension EditProfileVC:UIImagePickerControllerDelegate, UINavigationControllerD
     
 }
 
+// MARK: - Premium
+extension EditProfileVC{
+    func openPaymentHistory(){
+        view.endEditing(true)
+       
+        if  strPremium == paymentTitle.premimumMember.rawValue {
+            NavigationManager.navigateToPaymentHistory(navigationController: navigationController)
+
+        } else{
+            NavigationManager.navigateToPayment(navigationController: navigationController, email: myData.userInfo.email, userId: myData.userInfo.uid , iSTopup: false, isComingFromRegistration: false)
+            
+        }
+        
+//        self.myTable.setContentOffset(CGPoint(x: 0, y: 340), animated: true)
+        
+    }
+}
