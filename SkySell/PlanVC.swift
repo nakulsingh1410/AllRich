@@ -11,6 +11,12 @@ import Firebase
 import RealmSwift
 import StoreKit
 
+enum PlanName:String {
+    case premium = "Premium Plan"
+    case free = "Free Plan"
+    
+}
+
 
 class PlanVC: UIViewController {
 
@@ -188,7 +194,7 @@ class PlanVC: UIViewController {
             
             if appDelegate.isPremiumMember {
                 let model = self.myData.bufferAllPlans.filter({ (planModel) -> Bool in
-                    if planModel.plan_name == "Premium Plan" {
+                    if planModel.plan_name == PlanName.premium.rawValue {
                         return true
                     }
                     return false
@@ -202,7 +208,7 @@ class PlanVC: UIViewController {
                 }
             }else{
                 let model = self.myData.bufferAllPlans.filter({ (planModel) -> Bool in
-                    if planModel.plan_name == "Free Plan" {
+                    if planModel.plan_name == PlanName.free.rawValue{
                         return true
                     }
                     return false
@@ -452,14 +458,17 @@ extension PlanVC:UICollectionViewDataSource, UICollectionViewDelegate{
             
             
             
-            if(myData.userInfo.plan_id == plan.plan_id){
-                cell.btUpgrade.isEnabled = false
-                cell.btUpgrade.setTitle("Subscribed", for: .normal)
+            if(PlanName.free.rawValue == plan.plan_name){
+//                cell.btUpgrade.isEnabled = false
+                cell.btUpgrade.setTitle("Upgrade Plan", for: .normal)
                 cell.btUpgrade.alpha = 1
+                cell.btUpgrade.addTarget(self, action: #selector(PlanVC.gotToUpgradePlan), for: .touchUpInside)
             }else{
-                cell.btUpgrade.isEnabled = false
-                cell.btUpgrade.setTitle("Subscribed", for: .normal)
-                cell.btUpgrade.alpha = 0
+//                cell.btUpgrade.isEnabled = false
+                cell.btUpgrade.setTitle("Top-up", for: .normal)
+                cell.btUpgrade.alpha = 1
+                cell.btUpgrade.addTarget(self, action:#selector(PlanVC.gotToTopUpPlan), for: .touchUpInside)
+
             }
         }
         
@@ -502,6 +511,12 @@ extension PlanVC:UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     
+    func gotToTopUpPlan()  {
+        NavigationManager.navigateToPayment(navigationController: navigationController, email: myData.userInfo.email, userId: myData.userInfo.uid, iSTopup: true, isComingFromRegistration: false)
+    }
+    func gotToUpgradePlan()  {
+         NavigationManager.navigateToPayment(navigationController: navigationController, email: myData.userInfo.email, userId: myData.userInfo.uid, iSTopup: false, isComingFromRegistration: false)
+    }
     
     
 }

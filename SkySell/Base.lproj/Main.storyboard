@@ -114,7 +114,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-Hi-nTe">
                                                 <rect key="frame" x="5" y="0.0" width="43.5" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="iconPhoto.png"/>
+                                                <state key="normal" image="icon_post"/>
                                                 <connections>
                                                     <action selector="tapOnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KRM-RY-stw"/>
                                                 </connections>
@@ -5257,7 +5257,6 @@ proceeding to use the application.</string>
         <image name="iconNoProduct.png" width="60" height="60"/>
         <image name="iconNormal.png" width="35" height="35"/>
         <image name="iconOther.png" width="22" height="4"/>
-        <image name="iconPhoto.png" width="21" height="18"/>
         <image name="iconProfileEmptyState.png" width="32" height="38"/>
         <image name="iconProfileNonactive.png" width="16" height="18"/>
         <image name="iconSad.png" width="35" height="35"/>
@@ -5265,6 +5264,7 @@ proceeding to use the application.</string>
         <image name="iconSmile.png" width="35" height="35"/>
         <image name="icon_dollar" width="20" height="20"/>
         <image name="icon_friend" width="20" height="14"/>
+        <image name="icon_post" width="20" height="20"/>
         <image name="icon_search_user" width="20" height="20"/>
         <image name="imgDefault.png" width="48" height="35"/>
         <image name="like.png" width="22" height="19"/>

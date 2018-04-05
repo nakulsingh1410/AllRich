@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerForPushNotifications(application: application)
         appDelegate.checkUserPremium()
         appDelegate.getUserPoints()
+        
         return true
     }
 

@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     var screenSize:CGRect = UIScreen.main.bounds
     var myActivityView:ActivityLoadingView! = nil
     var haveNoti:Bool = false
-    var isMemberPremium : Bool?
     var lastMode:HomeContainerVC.SegName = HomeContainerVC.SegName.toHome
     var thisUserForCheckInProductDetail:HomeContainerVC.SegName = HomeContainerVC.SegName.toHome
     
@@ -535,15 +534,11 @@ class ViewController: UIViewController {
     // MARK: - Action
     @IBAction func btnUpgradePlanTapped(_ sender: Any) {
         
-        if let isPremium = isMemberPremium {
-            if isPremium == true {
+            if appDelegate.isPremiumMember == true {
                 showActionSheetForPremiumMember()
             }else{
                  showActionSheetForFreeMember()
             }
-        }else{
-            checkUserPremium(isDollerButtonTapped: true, isCameraTapped: false)
-        }
     }
     
     @IBAction func btnFriendRequestTapped(_ sender: Any) {
@@ -620,16 +615,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapOnCamera(_ sender: UIButton) {
-        if let isPremium = isMemberPremium {
-            if isPremium == true {
+            if appDelegate.isPremiumMember == true {
                 openCamera()
             }else{
                showActionSheetForFreeMember()
             }
-        }else{
-            checkUserPremium(isDollerButtonTapped: false, isCameraTapped:true)
-            
-        }
     }
     
     
@@ -860,7 +850,7 @@ extension ViewController {
     func checkUserPremium(isDollerButtonTapped:Bool,isCameraTapped:Bool)  {
         WebServiceModel.isPremiunMember { (isPremium) in
               DispatchQueue.main.async {
-                self.isMemberPremium = isPremium
+                appDelegate.isPremiumMember = isPremium
                 if isDollerButtonTapped{
                     self.btnUpgradePlanTapped(UIButton())
                 }

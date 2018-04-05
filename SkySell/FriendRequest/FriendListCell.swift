@@ -152,7 +152,7 @@ class FriendListCell: UITableViewCell {
     }
 
     func getDateString(unixtimeInterval:Int) -> String {
-        let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
+        let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval/1000))
         let dateFormatter = DateFormatter()
 //        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
 //        dateFormatter.locale = NSLocale.current

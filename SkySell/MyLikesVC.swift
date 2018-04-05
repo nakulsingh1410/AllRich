@@ -933,7 +933,8 @@ extension MyLikesVC:UICollectionViewDataSource, UICollectionViewDelegate{
                 }else{
                     cell.lazyImage.imageView.image = nil
                 }
-                
+                let strPoint =  product.points < 2 ? " Point" : " Points"
+                cell.lblPoints.text = "\(product.points)" + strPoint
                 
                 cell.lbName.text = String(format: "%@  %@", product.owner_FirstName, product.owner_LastName)
                 

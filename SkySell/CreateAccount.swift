@@ -460,8 +460,8 @@ class CreateAccount: UIViewController {
     
     
     func getUniqueNumber() -> String {
-        let time = "\(NSDate().timeIntervalSince1970 * 1000)"
-
+        let timeStamp =  Int(NSDate().timeIntervalSince1970)
+        let time =  String(format:"%2X", timeStamp)
         return "\(time)"
     }
 

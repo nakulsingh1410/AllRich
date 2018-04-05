@@ -701,6 +701,7 @@ class LoginVC: UIViewController {
                 self.myData.saveUserReferKey(UserReferKey: self.myData.userInfo.userReferKey)
                 //print(self.myData.userInfo.first_name)
                 appDelegate.checkUserPremium()
+                appDelegate.checkUserPremium()
             }
 
             if(SettingData.sharedInstance.haveConnect == false){

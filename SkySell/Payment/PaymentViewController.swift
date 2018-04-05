@@ -46,11 +46,12 @@ class PaymentViewController: UIViewController {
             btnSkip.isHidden = false
         }else{
             btnBack.isHidden = false
-            if isTopup {
-                btnSkip.isHidden = true
-            }else{
-                btnSkip.isHidden = false
-            }
+            btnSkip.isHidden = true
+//            if isTopup {
+//                btnSkip.isHidden = true
+//            }else{
+//                btnSkip.isHidden = false
+//            }
         }
         
     }
@@ -200,6 +201,10 @@ extension PaymentViewController{
                 self.processStripePayment()
             }else{
                 Global.hideHud()
+                if let errorMsg = error?.localizedDescription{
+                    Global.showAlert(navigationController: self.navigationController, message:errorMsg)
+                }
+
             }
         })
         

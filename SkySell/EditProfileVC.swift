@@ -38,7 +38,7 @@ class EditProfileVC: UIViewController {
     
     enum paymentTitle:String {
         case premimumMember = "Premium - Payment History"
-        case freeMember =  "Payment"
+        case freeMember =  "Free - Upgrade Plan"
 
     }
     
@@ -1013,12 +1013,14 @@ extension EditProfileVC:UITableViewDelegate, UITableViewDataSource{
             cell?.tfInput.text = strPremium
             cell?.tfInput.isSecureTextEntry = false
             cell?.tfInput.isUserInteractionEnabled = true
-            cell?.imageIcon.image = UIImage(named: "call.png")
+            let image  = #imageLiteral(resourceName: "icon_member").withRenderingMode(.alwaysTemplate)
+            cell?.imageIcon.tintColor = UIColor.init(red: 88/255, green: 116/255, blue: 243/255, alpha: 1)
+            cell?.imageIcon.image = image
             cell?.button.isHidden = false
             indexPathForMembershipCell = indexPath
             cell?.button.addTarget(self, action: #selector(EditProfileVC.openPaymentHistory), for: .touchUpInside)
             
-            
+          
             
             return cell!
         }

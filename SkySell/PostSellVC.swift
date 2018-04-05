@@ -759,7 +759,7 @@ class PostSellVC: UIViewController {
         userProduct.product_latitude = latitude
         userProduct.product_longitude = longitude
         userProduct.product_location = strLocation
-        userProduct.points = strPoints
+        userProduct.points = Int(strPoints)!
         
         userProduct.product_serials.removeAll()
         for i in 0..<self.arSerial.count{

@@ -74,7 +74,7 @@ class ProductDataModel: NSObject {
     
     var year:String = ""
     var country:String = ""
-    var points:String = ""
+    var points:Int = 0
 
     var report_id:[String] = [String]()
     
@@ -125,7 +125,9 @@ class ProductDataModel: NSObject {
             self.category2 = category2
         }
         
-        
+        if let points = obj["points"] as? String ,let newPoint = Int(points){
+            self.points = newPoint
+        }
         
         
         let dateFormatFull:DateFormatter = DateFormatter()
