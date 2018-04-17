@@ -45,6 +45,7 @@ class ProductDetailVC: UIViewController {
         case category
         case productId
         case condition
+        case points
         case description
         //------
         case serial
@@ -232,6 +233,7 @@ class ProductDetailVC: UIViewController {
                 newSection.arCellName.append(CellName.category.rawValue)
                 newSection.arCellName.append(CellName.productId.rawValue)
                 newSection.arCellName.append(CellName.condition.rawValue)
+                newSection.arCellName.append(CellName.points.rawValue)
                 newSection.arCellName.append(CellName.description.rawValue)
                 
                 self.serialStartAtRow = 10
@@ -581,6 +583,7 @@ class ProductDetailVC: UIViewController {
                 newSection.arCellName.append(CellName.category.rawValue)
                 newSection.arCellName.append(CellName.productId.rawValue)
                 newSection.arCellName.append(CellName.condition.rawValue)
+                newSection.arCellName.append(CellName.points.rawValue)
                 newSection.arCellName.append(CellName.description.rawValue)
                 
                 self.serialStartAtRow = 10
@@ -1631,7 +1634,14 @@ extension ProductDetailVC:UITableViewDelegate, UITableViewDataSource{
             
             cellHeight = self.getCellDetailHeight(Title: "Condition", Detail: self.strIsNew)
             
-        }else if(cellType == CellName.description.rawValue){
+        }
+        else if(cellType == CellName.points.rawValue){
+            
+            
+            cellHeight = self.getCellDetailHeight(Title: "Points", Detail: "\(self.myProductData.points)")
+            
+        }
+        else if(cellType == CellName.description.rawValue){
             
             
             cellHeight = self.getCellDetailHeight(Title: "Description", Detail: self.myProductData.product_description)
@@ -1877,7 +1887,22 @@ extension ProductDetailVC:UITableViewDelegate, UITableViewDataSource{
             
             return cell!
             
-        }else if(cellType == CellName.description.rawValue){
+        }
+        else if(cellType == CellName.points.rawValue){
+            //PDTitleCell
+            let cell:PDDetailCell? = tableView.dequeueReusableCell(withIdentifier: "PDDetailCell", for: indexPath) as? PDDetailCell
+            cell?.selectionStyle = .none
+            cell?.clipsToBounds = true
+            cell?.tag = indexPath.row
+            
+            
+            cell?.lbTitle.text = "Points"
+            cell?.lbDetail.text = "\(self.myProductData.points)"
+            
+            return cell!
+            
+        }
+        else if(cellType == CellName.description.rawValue){
             //PDTitleCell
             let cell:PDDetailCell? = tableView.dequeueReusableCell(withIdentifier: "PDDetailCell", for: indexPath) as? PDDetailCell
             cell?.selectionStyle = .none

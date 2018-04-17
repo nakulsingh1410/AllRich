@@ -320,6 +320,7 @@ class UserMainSceneVC: UIViewController {
         DispatchQueue.main.async {
             self.lbBIO.text = self.seller.bio
             self.lbBIO.setContentOffset(CGPoint.zero, animated: false)
+            self.lblUserPoints.text = "Points: \(appDelegate.point)"
         }
         //self.lbBIO.scrollsToTop = true
     }

@@ -10,8 +10,8 @@ import UIKit
 
 
 enum PickerType:String {
-    case gendePicker = "Gender"
     case membershipTypePicker = "membershipType"
+    case accountTypePicker = "accountType"
 
 
     

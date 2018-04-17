@@ -75,6 +75,7 @@ class ProductDataModel: NSObject {
     var year:String = ""
     var country:String = ""
     var points:Int = 0
+    var accountType:String = ""
 
     var report_id:[String] = [String]()
     

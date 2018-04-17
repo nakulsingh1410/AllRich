@@ -85,7 +85,8 @@ class FriendListCell: UITableViewCell {
          lblUserType.text = ""
          lblNumberOfPoints.text = ""
          lblJoinDate.text = ""
-       
+        imgViewProfilePic.image = nil
+        
         btnFirst.isHidden = true
         btnSecond.isHidden = true
         btnThird.isHidden = true
@@ -107,7 +108,11 @@ class FriendListCell: UITableViewCell {
         
         
         if let image = model.profile_img,image.count > 0,let url = URL(string:image){
-            imgViewProfilePic.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "userPlaceholder"), options: nil, progressBlock: nil, completionHandler: nil)
+            imgViewProfilePic.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "userPlaceholder"), options: nil, progressBlock: nil, completionHandler: { (image, error, typr, url) in
+                if image == nil{
+                    self.imgViewProfilePic.image = #imageLiteral(resourceName: "userPlaceholder")
+                }
+            })
 
         }
         

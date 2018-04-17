@@ -13,6 +13,9 @@ class ReferAndEarnViewController: UIViewController {
     @IBOutlet weak var inviteImage: UIImageView!
     @IBOutlet weak var lblInviteCode: UILabel!
     @IBOutlet weak var btnShare: UIButton!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,10 +41,13 @@ class ReferAndEarnViewController: UIViewController {
     private func shareInviteCode() {
         // text to share
         if let inviteCode = lblInviteCode.text {
-            let text = inviteCode
+            let strInviteCode = inviteCode
             // set up activity view controller
+            
             let appShareUrl =  "https://itunes.apple.com/in/app/allrich/id1362807498?mt=8"
-            let textToShare:[Any] = [ text ,appShareUrl]
+            let shareContent =  "Hi, Use my referral code \(strInviteCode) to signup, click \(appShareUrl) to download the AllRich app."
+            
+            let textToShare:[Any] = [ shareContent]
             let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
             
@@ -54,9 +60,18 @@ class ReferAndEarnViewController: UIViewController {
     }
     
     
+    
+    
+    
     // MARK: - IBAction
     @IBAction func btnShareTapped(_ sender: Any) {
         shareInviteCode()
+    }
+    @IBAction func btnShareOnContactTapped(_ sender: Any) {
+//        let objController = self.storyboard?.instantiateViewControllerWithIdentifier("ContactListVCID") as! ContactListVC
+//        objController.contactType = .PhoneNumber
+//        self.navigationController?.pushViewController(objController, animated: true)
+    
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {

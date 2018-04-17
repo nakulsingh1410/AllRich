@@ -14,7 +14,8 @@ class PostTextFieldCell: UITableViewCell {
     @IBOutlet weak var viTextBG: UIView!
     
     @IBOutlet weak var myTextField: UITextField!
-    
+    @IBOutlet weak var button: UIButton!
+
     
     
     override func awakeFromNib() {
@@ -22,7 +23,7 @@ class PostTextFieldCell: UITableViewCell {
         // Initialization code
         self.viTextBG.clipsToBounds = true
         self.viTextBG.layer.cornerRadius = 4
-        
+        button.isHidden = true
         
     }
 

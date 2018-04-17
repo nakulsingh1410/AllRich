@@ -55,6 +55,51 @@ class FriendRequestViewController: UIViewController {
     }
     
     
+    
+    func searchFriend(searchText:String){
+        guard let friendListTypeObj = friendListType else {return}
+        var filteredData = [FriendListModel]()
+        if friendListTypeObj == .appUser {
+            
+            filteredData = arrAppUserFriendList.filter() {
+                return $0.first_name!.contains(searchText) || $0.first_name!.lowercased().contains(searchText)
+            }
+            
+            if searchText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0 {
+                 arrTableData = arrAppUserFriendList
+            }else{
+                arrTableData = filteredData
+            }
+            
+        }else if friendListTypeObj == .friendList {
+            
+            filteredData = arrFriendList.filter() {
+                return $0.first_name!.contains(searchText) || $0.first_name!.lowercased().contains(searchText)
+            }
+            
+            if searchText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0 {
+                arrTableData = arrFriendList
+            }else{
+                arrTableData = filteredData
+            }
+        }else if friendListTypeObj == .friendRequest {
+        
+            filteredData = arrPendingFriendRequestList.filter() {
+                return $0.first_name!.contains(searchText) || $0.first_name!.lowercased().contains(searchText)
+            }
+            if searchText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0 {
+                arrTableData = arrPendingFriendRequestList
+            }else{
+                arrTableData = filteredData
+            }
+        }
+    
+        
+      
+      tableViewFriendList.reloadData()
+    }
+    
+    
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
         txtFSeach.resignFirstResponder()
         if sender.selectedSegmentIndex == 0 {
@@ -67,6 +112,7 @@ class FriendRequestViewController: UIViewController {
             pendingFriendListAPi()
             friendListType = .friendRequest
         }
+        txtFSeach.text = ""
     }
     
     @IBAction func btnLikeTapped(_ sender: Any) {
@@ -130,6 +176,10 @@ extension FriendRequestViewController:UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        guard let text = textField.text else { return true }
+        let updatedText = (text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
+
+        searchFriend(searchText: updatedText)
         return true
     }
     

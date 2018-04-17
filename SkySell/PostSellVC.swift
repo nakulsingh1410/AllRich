@@ -24,6 +24,12 @@ class PostSellVC: UIViewController {
         case used
     }
     
+    enum AccountType:String{
+        case everyOne = "Everyone"
+        case publicType = "Public"
+        case friends = "Friends"
+    }
+    
     enum CellName:NSInteger {
         case space0 = 0
         case productImage
@@ -81,13 +87,15 @@ class PostSellVC: UIViewController {
         case add_serial
         case pointsTitle
         case pointsInput
+        case accountTypeTitle
+        case accounTypeInput
         case locationTitle
         case locationInput
         case edelete
         case delete
         
         
-        static let count = 58
+        static let count = 60
         
     }
     
@@ -128,7 +136,9 @@ class PostSellVC: UIViewController {
     var strLocation:String = ""
     var displayCategory:String = ""
     var strPoints : String = "1"
+    var strAccountType:String = "Friends"
 
+    var arrAccountType = [AccountType.everyOne.rawValue,AccountType.publicType.rawValue,AccountType.friends.rawValue]
     let cellFont:UIFont = UIFont(name: "Avenir-Book", size: 14)!
     
     var bufferSelectCategories:CategoriesDataModel! = nil
@@ -147,7 +157,8 @@ class PostSellVC: UIViewController {
     var callBackEditData:(ProductDataModel, Bool)->Void = {(product, isRemove) in }
     var useNavigater:Bool = false
     var textFildBuffer:UITextField? = nil
-    
+    var indexPathForAccountTypeCell : IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -184,7 +195,9 @@ class PostSellVC: UIViewController {
         strProductUserId = userProduct.product_id_number
         condition_isNew = userProduct.isNew
         strDrscription = userProduct.product_description
-        
+
+        strPoints = (userProduct.points > 0) ?  "\(userProduct.points)" : "1"
+        strAccountType = userProduct.accountType
         latitude = userProduct.product_latitude
         longitude = userProduct.product_longitude
         
@@ -760,7 +773,7 @@ class PostSellVC: UIViewController {
         userProduct.product_longitude = longitude
         userProduct.product_location = strLocation
         userProduct.points = Int(strPoints)!
-        
+        userProduct.accountType = strAccountType
         userProduct.product_serials.removeAll()
         for i in 0..<self.arSerial.count{
             let item = self.arSerial[i]
@@ -810,6 +823,9 @@ class PostSellVC: UIViewController {
         
         ///--------------
      
+        appDelegate.point =  appDelegate.point  - userProduct.points
+        NotificationCenter.default.post(name: Notification.Name(setPointNotificatio), object: nil)
+
         if(self.editMode == false){
             //Create
             let postRef = FIRDatabase.database().reference().child("products").childByAutoId()
@@ -859,7 +875,6 @@ class PostSellVC: UIViewController {
             postUserData["updated_at_server_timestamp"] = FIRServerValue.timestamp()
             
             postRef.updateChildValues(postUserData) { (error, ref) in
-                
                 if let error = error {
                     self.removeActivityView {
                         
@@ -906,6 +921,7 @@ class PostSellVC: UIViewController {
         //products[userProduct.product_id] = true
         let postRef = FIRDatabase.database().reference().child("users").child(userProduct.uid).child("products").child(userProduct.product_id)
         postRef.setValue(true) { (error, ref) in
+            appDelegate.getUserPoints()
             if let error = error {
                 self.removeActivityView {
                     let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -1167,7 +1183,16 @@ class PostSellVC: UIViewController {
         }else if  let point = Int(strPoints),point < 1{
             isError = true
             strMessage = "Point should be more than 0"
-        } else if(strLocation.count <= 0){
+        }
+        else if  let point = Int(strPoints),point > appDelegate.point{
+            isError = true
+            strMessage = "Point should be less than \(appDelegate.point)"
+        }
+       else if (strAccountType.count <= 0){
+            isError = true
+            strMessage = "Please select account type"
+        }
+        else if(strLocation.count <= 0){
             isError = true
             strMessage = "Please select Location"
         }else if(arImage.count <= 0){
@@ -1369,6 +1394,12 @@ extension PostSellVC:UITableViewDelegate, UITableViewDataSource{
         }else if(indexPath.row == CellName.pointsInput.rawValue){
             cellHeight = 37
         }
+        else if(indexPath.row == CellName.accountTypeTitle.rawValue){
+            cellHeight = 45
+        }else if(indexPath.row == CellName.accounTypeInput.rawValue){
+            cellHeight = 37
+        }
+            
             
         else if(indexPath.row == CellName.locationTitle.rawValue){
             cellHeight = 45
@@ -1910,6 +1941,41 @@ extension PostSellVC:UITableViewDelegate, UITableViewDataSource{
             cell?.myTextField.text = self.strPoints
             return cell!
         }
+         
+        else if(indexPath.row == CellName.accountTypeTitle.rawValue){
+            
+            let cell:PostTitleCell? = tableView.dequeueReusableCell(withIdentifier: "PostTitleCell", for: indexPath) as? PostTitleCell
+            cell?.selectionStyle = .none
+            cell?.clipsToBounds = true
+            cell?.tag = indexPath.row
+            
+            cell?.contentView.backgroundColor = UIColor.white
+            
+            cell?.lbTitle.text = "Account Type"
+            return cell!
+            
+        }else if(indexPath.row == CellName.accounTypeInput.rawValue){
+            
+            let cell:PostTextFieldCell? = tableView.dequeueReusableCell(withIdentifier: "PostTextFieldCell", for: indexPath) as? PostTextFieldCell
+            cell?.selectionStyle = .none
+            cell?.clipsToBounds = true
+            cell?.tag = indexPath.row
+            
+            cell?.contentView.backgroundColor = UIColor.white
+            
+            cell?.myTextField.tag = indexPath.row
+            cell?.myTextField.placeholder = "Account Type"
+            cell?.myTextField.delegate = self
+            cell?.myTextField.keyboardType = .numberPad
+            cell?.myTextField.inputAccessoryView = nil
+            
+            cell?.myTextField.text = self.strAccountType
+            indexPathForAccountTypeCell = indexPath
+            cell?.button.isHidden = false
+            cell?.button.addTarget(self, action: #selector(PostSellVC.openAccountTypePickerPicker), for: .touchUpInside)
+
+            return cell!
+        }
             
         else if(indexPath.row == CellName.locationTitle.rawValue){
             
@@ -2193,6 +2259,11 @@ extension PostSellVC:UITextFieldDelegate{
             self.strPoints = textField.text!
             break
             
+        case CellName.accounTypeInput.rawValue:
+            self.strAccountType = textField.text!
+            break
+            
+            
         default:
             break
         }
@@ -2320,5 +2391,33 @@ extension PostSellVC:GMSAutocompleteViewControllerDelegate{
 }
 
 
-
+// MARK: - Open picker view
+extension PostSellVC{
+    func openAccountTypePickerPicker(){
+        view.endEditing(true)
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .accountTypePicker
+            picker.pickerDataSource = arrAccountType
+            picker.customPickerViewDelegate = self
+            view.addSubview(picker)
+        }
+        self.myTable.setContentOffset(CGPoint(x: 0, y:840), animated: true)
+    }
+}
+/****************************************************************/
+// MARK: CustomPickerView Deleagte
+/**********************************************************************/
+extension PostSellVC:CustomPickerViewDelegate{
+    func dismissPickerView() {
+        
+    }
+    func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
+        strAccountType = title
+        if let indexPath = indexPathForAccountTypeCell,let cell = myTable.cellForRow(at: indexPath) as? PostTextFieldCell{
+            cell.myTextField.text = strAccountType
+        }
+        
+    }
+}
 
