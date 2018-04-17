@@ -907,7 +907,6 @@ class PostSellVC: UIViewController {
             }
             finish()
         })
-
     }
 
     func postUpdateProductIdToUserTable() {

@@ -3684,13 +3684,6 @@
 			path = MapBalloon;
 			sourceTree = "<group>";
 		};
-		A77096281F0CCE03001759D8 /* Subscribe */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subscribe;
-			sourceTree = "<group>";
-		};
 		A78423901F16F01E00F0B5C4 /* InAppPurchases */ = {
 			isa = PBXGroup;
 			children = (
@@ -3766,7 +3759,6 @@
 				A7CF7AB61EB996B2002BAD02 /* Frameworks */,
 				A79F778B1E9DE493007EF9B8 /* Resource */,
 				A7C4FD641EB1D444008511E1 /* Skeleton */,
-				A77096281F0CCE03001759D8 /* Subscribe */,
 				A78423901F16F01E00F0B5C4 /* InAppPurchases */,
 				A79F775D1E9DD2AC007EF9B8 /* AppDelegate.swift */,
 				039D64571EA3254800E665A5 /* ShareData.swift */,
